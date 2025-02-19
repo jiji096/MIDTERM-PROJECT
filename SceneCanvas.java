@@ -17,7 +17,7 @@ public class SceneCanvas extends JComponent {
 
         dolphin = new Dolphin();
         mrSun = new Sun();
-        
+
         Color blue = new Color(100,149,237);
         cloud1 = new Cloud(0,75,70, blue);
         cloud2 = new Cloud(100,65,70,blue);
@@ -33,13 +33,14 @@ public class SceneCanvas extends JComponent {
             RenderingHints.KEY_ANTIALIASING,
             RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHints(rh);
-
+        
+        mrSun.draw(g2d);
         cloud1.draw(g2d);
         cloud2.draw(g2d);
         cloud3.draw(g2d);
         dolphin.draw(g2d);
-        mrSun.draw(g2d);
         dagat.draw(g2d);
+        
     }  
 
 

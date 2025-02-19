@@ -14,7 +14,7 @@ public class Sun extends JComponent implements DrawingObject{
             RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHints(rh);
 
-        Ellipse2D.Double araw = new Ellipse2D.Double(650, 40, 100,100);
+        Ellipse2D.Double araw = new Ellipse2D.Double(650, 10, 100, 100);
         g2d.setColor(Color.YELLOW);
         g2d.fill(araw);
 
