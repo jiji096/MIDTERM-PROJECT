@@ -11,6 +11,7 @@ public class SceneCanvas extends JComponent {
     private Cloud cloud3;
     private Waves dagat;
     private Dolphin dolphin;
+    private Fish1 fish;
     private ArrayList<Cloud> clouds = new ArrayList<Cloud>();
 
     public SceneCanvas(int w, int h){
@@ -26,8 +27,8 @@ public class SceneCanvas extends JComponent {
         clouds.add(new Cloud(100,65,70,blue));
         clouds.add(new Cloud(520,80,70,blue));
 
+        fish = new Fish1();
         dagat = new Waves();
-        
     }
 
     @Override
@@ -40,12 +41,14 @@ public class SceneCanvas extends JComponent {
         g2d.setRenderingHints(rh);
         
         mrSun.draw(g2d);
+
         for (int i = 0; i < clouds.size(); i++) {
             clouds.get(i).draw(g2d);
         }
 
         dolphin.draw(g2d);
         dagat.draw(g2d);
+        fish.draw(g2d);
         
     }  
 
