@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class SceneCanvas extends JComponent { 
     private int width;
@@ -10,6 +11,7 @@ public class SceneCanvas extends JComponent {
     private Cloud cloud3;
     private Waves dagat;
     private Dolphin dolphin;
+    private ArrayList<Cloud> clouds = new ArrayList<Cloud>();
 
     public SceneCanvas(int w, int h){
         width = w;
@@ -17,12 +19,15 @@ public class SceneCanvas extends JComponent {
 
         dolphin = new Dolphin();
         mrSun = new Sun();
-
+        
         Color blue = new Color(100,149,237);
-        cloud1 = new Cloud(0,75,70, blue);
-        cloud2 = new Cloud(100,65,70,blue);
-        cloud3 = new Cloud(520,80,70,blue);
+
+        clouds.add(new Cloud(0,75,70,blue));
+        clouds.add(new Cloud(100,65,70,blue));
+        clouds.add(new Cloud(520,80,70,blue));
+
         dagat = new Waves();
+        
     }
 
     @Override
@@ -35,9 +40,10 @@ public class SceneCanvas extends JComponent {
         g2d.setRenderingHints(rh);
         
         mrSun.draw(g2d);
-        cloud1.draw(g2d);
-        cloud2.draw(g2d);
-        cloud3.draw(g2d);
+        for (int i = 0; i < clouds.size(); i++) {
+            clouds.get(i).draw(g2d);
+        }
+
         dolphin.draw(g2d);
         dagat.draw(g2d);
         
