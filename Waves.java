@@ -65,9 +65,14 @@ public class Waves implements DrawingObject{
         g2d.draw(firstWave);
         g2d.fill(firstWave);
 
-      
+        // g2d.translate(0, 420);
+        // g2d.setColor(new Color(68, 211, 255));
+        // g2d.draw(firstWave);
+        // g2d.fill(firstWave);
+        // g2d.translate(0, 420);
+        // g2d.draw(firstWave);
+        // g2d.fill(firstWave);
 
-        
 
     }    
 }
