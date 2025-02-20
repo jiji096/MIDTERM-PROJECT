@@ -49,6 +49,13 @@ public class Fish1 implements DrawingObject {
         //g2d.fill(dorsal);
         g2d.setTransform(reset);
 
+
+        Path2D.Double ventral = new Path2D.Double();
+        g2d.setColor(Color.BLACK);
+        ventral.moveTo(223.7, 529);
+        ventral.curveTo(220.8,535.7,213.1,534.6,210.8,528);
+        g2d.draw(ventral);
+
         Ellipse2D.Double eye = new Ellipse2D.Double(228.6, 600-78.5, 2, 2);
         g2d.setColor(Color.BLACK);
         g2d.fill(eye);
