@@ -21,9 +21,10 @@ public class Fish1 implements DrawingObject {
         body.lineTo(208.4, 600-80);
         g2d.setColor(Color.BLACK);
         g2d.draw(body);
+        AffineTransform reset = g2d.getTransform();
         g2d.translate(229.8-208.4, -((600-80)-(600-96.8)));
         g2d.draw(body);
-        g2d.translate(-(229.8-208.4), ((600-80)-(600-96.8)));
+        g2d.setTransform(reset);
 
         Path2D.Double tail = new Path2D.Double();
         tail.moveTo(208.4, 600-75.6);
@@ -34,7 +35,7 @@ public class Fish1 implements DrawingObject {
         g2d.draw(tail);
         g2d.translate(229.8-208.4, -((600-80)-(600-96.8)));
         g2d.draw(tail);
-        g2d.translate(-(229.8-208.4), ((600-80)-(600-96.8)));
+        g2d.setTransform(reset);
 
         Path2D.Double dorsal = new Path2D.Double();
         //temporary color lang
@@ -46,15 +47,14 @@ public class Fish1 implements DrawingObject {
         g2d.translate(229.8-208.4, -((600-80)-(600-96.8)));
         g2d.draw(dorsal);
         //g2d.fill(dorsal);
-        g2d.translate(-(229.8-208.4), ((600-80)-(600-96.8)));
+        g2d.setTransform(reset);
 
         Ellipse2D.Double eye = new Ellipse2D.Double(228.6, 600-78.5, 2, 2);
         g2d.setColor(Color.BLACK);
         g2d.fill(eye);
         g2d.translate(229.8-208.4, -((600-80)-(600-96.8)));
         g2d.fill(eye);
-        g2d.translate(-(229.8-208.4), ((600-80)-(600-96.8)));
-
+        g2d.setTransform(reset);
 
     }
 
