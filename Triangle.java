@@ -2,16 +2,9 @@ import java.awt.*;
 import java.awt.geom.*;
 
 public class Triangle implements DrawingObject {
-    private double x;
-    private double y;
-    private double size;
-    private Color color;
 
-    public Triangle(double x, double y, double size, Color color){
-        this.x = x;
-        this.y = y;
-        this.size = size;
-        this.color = color;
+    public Triangle(){
+
     }
 
     public void draw(Graphics2D g2d){
@@ -20,7 +13,11 @@ public class Triangle implements DrawingObject {
             RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHints(rh);
 
-        Line2D.Double line1 = Line2D.Double(650, 5,);
+        Line2D.Double line1 = new Line2D.Double(700, 50, 700, 60);
+        g2d.setColor(Color.BLACK);
+        g2d.draw(line1);
+
+    
 
     }
 }
