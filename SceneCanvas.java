@@ -6,9 +6,7 @@ public class SceneCanvas extends JComponent {
     private int width;
     private int height;
     private Sun mrSun;
-    private Cloud cloud1;
-    private Cloud cloud2;
-    private Cloud cloud3;
+    private Triangle rays;
     private Waves dagat;
     private Dolphin dolphin;
     private Fish1 fish;
@@ -20,6 +18,7 @@ public class SceneCanvas extends JComponent {
 
         dolphin = new Dolphin();
         mrSun = new Sun();
+        rays = new Triangle();
         
         Color blue = new Color(100,149,237);
 
@@ -49,6 +48,7 @@ public class SceneCanvas extends JComponent {
         dolphin.draw(g2d);
         dagat.draw(g2d);
         fish.draw(g2d);
+        rays.draw(g2d);
         
     }  
 

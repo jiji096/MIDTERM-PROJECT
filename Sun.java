@@ -14,7 +14,7 @@ public class Sun extends JComponent implements DrawingObject{
             RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHints(rh);
 
-        Circle araw = new Circle(650,10,100, Color.YELLOW);
+        Circle araw = new Circle(650,20,100, Color.YELLOW);
         araw.draw(g2d);
     }
 }  
