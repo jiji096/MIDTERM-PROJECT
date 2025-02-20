@@ -18,7 +18,6 @@ public class SceneCanvas extends JComponent {
 
         dolphin = new Dolphin();
         mrSun = new Sun();
-        rays = new Triangle();
         
         Color blue = new Color(100,149,237);
 
@@ -48,7 +47,6 @@ public class SceneCanvas extends JComponent {
         dolphin.draw(g2d);
         dagat.draw(g2d);
         fish.draw(g2d);
-        rays.draw(g2d);
         
     }  
 
