@@ -20,9 +20,12 @@ public class SceneCanvas extends JComponent {
         mrSun = new Sun();
         
         Color blue = new Color(100,149,237);
-
-        clouds.add(new Cloud(0,75,70,blue));
+        Color darkBlue = new Color(	66, 117, 209);
+        clouds.add(new Cloud(105, 70, 70, darkBlue));
         clouds.add(new Cloud(100,65,70,blue));
+        clouds.add(new Cloud(5, 80, 70, darkBlue));
+        clouds.add(new Cloud(0,75,70,blue));
+        clouds.add(new Cloud(525, 85, 70, darkBlue));
         clouds.add(new Cloud(520,80,70,blue));
 
         fish = new Fish1();
@@ -44,8 +47,8 @@ public class SceneCanvas extends JComponent {
             clouds.get(i).draw(g2d);
         }
 
-        dolphin.draw(g2d);
         dagat.draw(g2d);
+        dolphin.draw(g2d);
         fish.draw(g2d);
         
     }  

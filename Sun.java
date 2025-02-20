@@ -14,9 +14,9 @@ public class Sun extends JComponent implements DrawingObject{
             RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHints(rh);
 
-        Circle araw = new Circle(650,20,100, Color.YELLOW);
+        Circle araw = new Circle(650,20,100, new Color(255, 210, 18));
         araw.draw(g2d);
-        Triangle rays = new Triangle(755, 50, 785, 70, 755, 90, Color.yellow);
+        Triangle rays = new Triangle(755, 50, 785, 70, 755, 90, new Color(255, 210, 18));
         rays.draw(g2d);
         AffineTransform reset = g2d.getTransform();
         // outside rays
