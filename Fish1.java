@@ -46,7 +46,7 @@ public class Fish1 implements DrawingObject {
         //g2d.fill(dorsal);
         g2d.translate(229.8-208.4, -((600-80)-(600-96.8)));
         g2d.draw(dorsal);
-        g2d.fill(dorsal);
+        //g2d.fill(dorsal);
         g2d.setTransform(reset);
 
         Ellipse2D.Double eye = new Ellipse2D.Double(228.6, 600-78.5, 2, 2);
