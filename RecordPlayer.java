@@ -13,7 +13,7 @@ public class RecordPlayer extends JComponent implements DrawingObject{
             RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHints(rh);
 
-        Circle record = new Circle(645,430,125, Color.BLACK);
+        Circle record = new Circle(645,430,125, Color.GRAY);
         record.draw(g2d);
     }
 }
