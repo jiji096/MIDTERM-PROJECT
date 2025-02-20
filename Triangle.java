@@ -26,9 +26,9 @@ public class Triangle implements DrawingObject {
         // triangle.moveTo(755, 50);
         // triangle.lineTo(785, 70);
         // triangle.lineTo(755,90);
-        triangle.moveTo(x1,y1);
+        triangle.moveTo(x1,y2);
         triangle.lineTo(x2,y2);
-        triangle.lineTo(x3, y3);
+        triangle.lineTo(x3,y3);
         triangle.closePath();
         g2d.setColor(color);
         g2d.fill(triangle);
@@ -62,7 +62,5 @@ public class Triangle implements DrawingObject {
         // g2d.rotate(Math.toRadians(90), 755, 50);
         // g2d.translate(75, 35);
         // g2d.fill(triangle);
-        
-
     }
 }
