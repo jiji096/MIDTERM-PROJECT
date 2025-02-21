@@ -18,7 +18,7 @@ public class SceneCanvas extends JComponent {
         width = w;
         height = h;
 
-        dolphin = new Dolphin();
+        dolphin = new Dolphin(450,700);
         mrSun = new Sun();
         
         Color blue = new Color(100,149,237);
@@ -57,6 +57,10 @@ public class SceneCanvas extends JComponent {
         chest.draw(g2d);
         record.draw(g2d);
     }  
+
+    public Dolphin getDolphin(){
+        return dolphin;
+    }
 
 
 }

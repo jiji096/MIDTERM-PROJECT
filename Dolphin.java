@@ -2,12 +2,25 @@ import java.awt.*;
 import java.awt.geom.*;
 
 public class Dolphin implements DrawingObject {
-    
-    public Dolphin () {
+    private double x, y, rotation;
 
+    public Dolphin (double x, double y) {
+        this.x = x;
+        this.y = y;
+        rotation = 0;
+    }
+
+    public void rotate(){
+        rotation += 10;
+    }
+
+    public void rotateCC(){
+        rotation -= 10;
     }
 
     public void draw(Graphics2D g2d) {
+        AffineTransform reset = g2d.getTransform();
+       
         Path2D.Double upper = new Path2D.Double();
         g2d.setColor(Color.BLACK);
 
@@ -68,6 +81,12 @@ public class Dolphin implements DrawingObject {
         fin2.curveTo(315.8,359,328.4,346.9,330.4,336.05);
         fin2.curveTo(315.7,336.5,318,334.2,314.1,340.7);
 
+        Ellipse2D.Double eye = new Ellipse2D.Double(340,313,6,6);
+       
+
+        // rotation
+        g2d.rotate(Math.toRadians(rotation),x,y);
+
         g2d.setColor(new Color(	113, 132, 150));
         g2d.fill(upper);
 
@@ -80,8 +99,10 @@ public class Dolphin implements DrawingObject {
         g2d.setColor(new Color(	113, 132, 150));
         g2d.fill(fin2);
 
-        Ellipse2D.Double eye = new Ellipse2D.Double(340,313,6,6);
         g2d.setColor(Color.BLACK);
         g2d.fill(eye);
+
+        // reset transform
+        g2d.setTransform(reset);
     }
 }
