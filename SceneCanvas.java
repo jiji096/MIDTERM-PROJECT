@@ -12,6 +12,7 @@ public class SceneCanvas extends JComponent {
     private Fish1 fish;
     private Chest chest;
     private RecordPlayer record;
+    private Rainbow rainbow;
     private ArrayList<Cloud> clouds = new ArrayList<Cloud>();
 
     public SceneCanvas(int w, int h){
@@ -34,6 +35,7 @@ public class SceneCanvas extends JComponent {
         dagat = new Waves();
         chest = new Chest();
         record = new RecordPlayer();
+        rainbow = new Rainbow();
     }
 
     @Override
@@ -51,6 +53,7 @@ public class SceneCanvas extends JComponent {
             clouds.get(i).draw(g2d);
         }
 
+        rainbow.draw(g2d);
         dagat.draw(g2d);
         dolphin.draw(g2d);
         fish.draw(g2d);
