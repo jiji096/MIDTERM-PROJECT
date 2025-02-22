@@ -45,9 +45,12 @@ public class SceneFrame extends JComponent {
             public void actionPerformed(ActionEvent x){
                 JButton b = (JButton) x.getSource();
                 Dolphin d = scene.getDolphin();
+                RecordPlayer r = scene.getRecordPlayer();
+                Sun sun = scene.getSun();
 
                 if (b == rotate){
                     d.rotate();
+                    sun.rotate();
                 }
 
                 else if (b == clockwise){

@@ -62,5 +62,13 @@ public class SceneCanvas extends JComponent {
         return dolphin;
     }
 
+    public RecordPlayer getRecordPlayer(){
+        return record;
+    }
+
+    public Sun getSun(){
+        return mrSun;
+    }
+
 
 }
