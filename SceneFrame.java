@@ -1,6 +1,6 @@
-import javax.swing.*;
-import java.awt.event.*;
 import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class SceneFrame extends JComponent { 
     private JFrame frame;
@@ -46,11 +46,13 @@ public class SceneFrame extends JComponent {
                 JButton b = (JButton) x.getSource();
                 Dolphin d = scene.getDolphin();
                 RecordPlayer r = scene.getRecordPlayer();
+                Fish1 f1 = scene.getFish1();
                 Sun sun = scene.getSun();
 
                 if (b == rotate){
                     d.rotate();
                     sun.rotate();
+                    f1.moveLeft();
                 }
 
                 else if (b == clockwise){

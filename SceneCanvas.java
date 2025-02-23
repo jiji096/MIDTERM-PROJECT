@@ -9,7 +9,7 @@ public class SceneCanvas extends JComponent {
     private Triangle rays;
     private Waves dagat;
     private Dolphin dolphin;
-    private Fish1 fish;
+    private Fish1 fish1;
     private Chest chest;
     private RecordPlayer record;
     private ArrayList<Cloud> clouds = new ArrayList<Cloud>();
@@ -30,7 +30,7 @@ public class SceneCanvas extends JComponent {
         clouds.add(new Cloud(525, 85, 70, darkBlue));
         clouds.add(new Cloud(520,80,70,blue));
 
-        fish = new Fish1();
+        fish1 = new Fish1();
         dagat = new Waves();
         chest = new Chest();
         record = new RecordPlayer();
@@ -53,13 +53,17 @@ public class SceneCanvas extends JComponent {
 
         dagat.draw(g2d);
         dolphin.draw(g2d);
-        fish.draw(g2d);
+        fish1.draw(g2d);
         chest.draw(g2d);
         record.draw(g2d);
     }  
 
     public Dolphin getDolphin(){
         return dolphin;
+    }
+
+    public Fish1 getFish1() {
+        return fish1;
     }
 
     public RecordPlayer getRecordPlayer(){
