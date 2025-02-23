@@ -1,8 +1,6 @@
 import java.awt.*;
-import javax.swing.*;
 
-
-public class Cloud extends JComponent implements DrawingObject {
+public class Cloud implements DrawingObject {
     private double x;
     private double y;
     private double size;

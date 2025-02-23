@@ -13,8 +13,8 @@ public class SceneCanvas extends JComponent {
     private Chest chest;
     private RecordPlayer record;
     private Rainbow rainbow;
-    private Coral coral;
     private ArrayList<Cloud> clouds = new ArrayList<Cloud>();
+    private ArrayList<Coral> corals = new ArrayList<Coral>();
 
     public SceneCanvas(int w, int h){
         width = w;
@@ -37,7 +37,10 @@ public class SceneCanvas extends JComponent {
         chest = new Chest();
         record = new RecordPlayer();
         rainbow = new Rainbow();
-        coral = new Coral();
+
+        corals.add(new Coral(0));
+        corals.add(new Coral(300));
+        corals.add(new Coral(430));
     }
 
     @Override
@@ -61,7 +64,11 @@ public class SceneCanvas extends JComponent {
         fish1.draw(g2d);
         chest.draw(g2d);
         record.draw(g2d);
-        coral.draw(g2d);
+        
+        for (int i = 0; i < corals.size(); i++) {
+            corals.get(i).draw(g2d);
+        }
+
     }  
 
     public Dolphin getDolphin(){

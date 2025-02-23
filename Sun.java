@@ -1,8 +1,7 @@
 import java.awt.*;
 import java.awt.geom.*;
-import javax.swing.*;
 
-public class Sun extends JComponent implements DrawingObject{    
+public class Sun implements DrawingObject{    
 
     private double rotation;
 
