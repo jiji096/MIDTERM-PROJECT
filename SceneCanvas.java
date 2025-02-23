@@ -80,5 +80,10 @@ public class SceneCanvas extends JComponent {
         return mrSun;
     }
 
+    public Rainbow getRainbow(){
+        return rainbow;
+    }
+
+
 
 }
