@@ -4,15 +4,16 @@ import javax.swing.*;
 
 public class Sun extends JComponent implements DrawingObject{    
 
-    private double rotation;
+    private double rotation, measure;
 
     public Sun () {
-
+        measure = 30;
     }
 
     public void rotate(){
         rotation += 5;
     }
+
     
     public void draw(Graphics2D g2d){
         RenderingHints rh = new RenderingHints(
@@ -24,7 +25,7 @@ public class Sun extends JComponent implements DrawingObject{
         g2d.rotate(Math.toRadians(rotation),400, 600);
 
         Circle araw = new Circle(650,20,100, new Color(255, 210, 18));
-        Circle buwan = new Circle(133,600+(600-20)-100,100, new Color(30, 210, 255));
+        Circle buwan = new Circle(133,600+(600-100)-100,100, new Color(30, 210, 255));
         buwan.draw(g2d);
         araw.draw(g2d);
         //Triangle rays = new Triangle(755, 50, 785, 70, 755, 90, new Color(255, 210, 18));
@@ -52,4 +53,5 @@ public class Sun extends JComponent implements DrawingObject{
 
         g2d.setTransform(reset);
     }
+
 }  

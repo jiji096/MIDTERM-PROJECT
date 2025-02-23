@@ -8,6 +8,9 @@ public class SceneFrame extends JComponent {
     private SceneCanvas scene;
     private int width;
     private int height;
+    private int state1 = 0;
+    private int state2 = 0;
+    private int day = 0;
     
     public SceneFrame(int w, int h){
         frame = new JFrame();
@@ -47,12 +50,36 @@ public class SceneFrame extends JComponent {
                 Dolphin d = scene.getDolphin();
                 RecordPlayer r = scene.getRecordPlayer();
                 Fish1 f1 = scene.getFish1();
+                Rainbow rb = scene.getRainbow();
                 Sun sun = scene.getSun();
 
+
+    
                 if (b == rotate){
                     d.rotate();
                     sun.rotate();
                     f1.moveLeft();
+                    day+=5;
+                    if (day > 60 && day < 270) {
+                        rb.setTransparency(0);
+                    }
+                    if (day <= 30 || day >= 270) {
+                        state2 = 0;
+                    }
+                    else {
+                        state2 = 1;
+                    }
+                    if (day == 360) {
+                        day = 0;
+                    }
+                    if (day > 270 && day < 360) {
+                        rb.turnOpaque();
+                    }
+                    else {
+                        rb.turnTransparent();
+                    }
+                    System.out.println(rb.getTransparency());
+                    System.out.println("day: " + day);
                 }
 
                 else if (b == clockwise){
