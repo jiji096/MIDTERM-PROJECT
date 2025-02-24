@@ -15,7 +15,7 @@ public class SceneCanvas extends JComponent {
     private Rainbow rainbow;
     private ArrayList<Cloud> clouds = new ArrayList<Cloud>();
     private ArrayList<Coral> corals = new ArrayList<Coral>();
-
+    
     public SceneCanvas(int w, int h){
         width = w;
         height = h;
@@ -37,14 +37,15 @@ public class SceneCanvas extends JComponent {
         chest = new Chest();
         record = new RecordPlayer();
         rainbow = new Rainbow();
-
         corals.add(new Coral(0));
         corals.add(new Coral(300));
         corals.add(new Coral(430));
+
     }
 
     @Override
     protected void paintComponent(Graphics g){
+        super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
         RenderingHints rh = new RenderingHints(
@@ -90,7 +91,5 @@ public class SceneCanvas extends JComponent {
     public Rainbow getRainbow(){
         return rainbow;
     }
-
-
 
 }
