@@ -74,10 +74,13 @@ public class SceneFrame extends JComponent implements ActionListener {
         Fish1 f1 = scene.getFish1();
         Rainbow rb = scene.getRainbow();
         Sun sun = scene.getSun();
+        Sky sky = scene.getSky();
 
         d.rotate();
         sun.rotate();
         f1.moveLeft();
+        sky.rotate();
+        
         day+=5;
         if (day > 60 && day < 270) {
             rb.setTransparency(0);
