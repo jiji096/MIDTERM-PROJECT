@@ -22,7 +22,7 @@ public class SceneFrame extends JComponent implements ActionListener {
         clockwise = new JButton("clockwise");
         scene = new SceneCanvas(w, h);
 
-        loopie = new Timer(100, this);
+        loopie = new Timer(20, this);
     }
 
     public void setUpGUI(){

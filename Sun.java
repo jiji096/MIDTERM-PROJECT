@@ -10,7 +10,7 @@ public class Sun implements DrawingObject{
     }
 
     public void rotate(){
-        rotation += 5;
+        rotation += 5/3;
     }
 
     

@@ -11,7 +11,7 @@ public class Dolphin implements DrawingObject {
     }
 
     public void rotate(){
-        rotation += 30;
+        rotation += 10;
     }
 
     public void rotateCC(){

@@ -70,8 +70,13 @@ public class SceneCanvas extends JComponent {
         dolphin.draw(g2d);
         fish1.draw(g2d);
         chest.draw(g2d);
-        record.draw(g2d);
-        
+        record.draw(g2d); 
+
+
+        if (fish1.getX() == 600) {
+            fish1.draw(g2d);
+        }
+
         for (int i = 0; i < corals.size(); i++) {
             corals.get(i).draw(g2d);
         }

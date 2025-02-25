@@ -1,6 +1,6 @@
 import java.awt.*;
-import javax.swing.*;
 import java.awt.geom.*;
+import javax.swing.*;
 
 public class RecordPlayer extends JComponent implements DrawingObject{    
 
@@ -24,11 +24,7 @@ public class RecordPlayer extends JComponent implements DrawingObject{
         AffineTransform reset = g2d.getTransform();
 
         Circle record = new Circle(645,430,125, Color.GRAY);
-        Line line = new Line(645,430,645,450);
         record.draw(g2d);
-        line.draw(g2d);
 
-        g2d.rotate(Math.toRadians(rotation), 645, 430);
-        g2d.setTransform(reset);
     }
 }
