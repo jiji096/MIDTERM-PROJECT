@@ -9,6 +9,11 @@ public class Fish1 implements DrawingObject {
     public void moveLeft() {
         x+=10;
     }
+
+    public double getX() {
+        return x;
+    }
+    
     public void draw(Graphics2D g2d) {
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,
