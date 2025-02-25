@@ -16,12 +16,10 @@ public class SceneCanvas extends JComponent {
     private Sky sky;
     private ArrayList<Cloud> clouds = new ArrayList<Cloud>();
     private ArrayList<Coral> corals = new ArrayList<Coral>();
-    
+    private Stars stars;    
     public SceneCanvas(int w, int h){
         width = w;
         height = h;
-
-        
 
         dolphin = new Dolphin(450,700);
         mrSun = new Sun();
@@ -45,7 +43,7 @@ public class SceneCanvas extends JComponent {
         corals.add(new Coral(430));
 
         sky = new Sky(400, 0, new Color( 176, 206, 255), 400, 600, new Color (59, 0, 100 ));
-
+        stars = new Stars(450,700);
     }
 
     @Override
@@ -59,12 +57,14 @@ public class SceneCanvas extends JComponent {
         g2d.setRenderingHints(rh);
         
         sky.draw(g2d);
+        stars.draw(g2d);
         mrSun.draw(g2d);
 
         for (int i = 0; i < clouds.size(); i++) {
             clouds.get(i).draw(g2d);
         }
 
+        rainbow.draw(g2d);
         dolphin.draw(g2d);
         dagat.draw(g2d);
         dolphin.draw(g2d);
@@ -75,7 +75,6 @@ public class SceneCanvas extends JComponent {
         for (int i = 0; i < corals.size(); i++) {
             corals.get(i).draw(g2d);
         }
-
 
     }  
 
@@ -101,5 +100,9 @@ public class SceneCanvas extends JComponent {
 
     public Sky getSky(){
         return sky;
+    }
+
+    public Stars getStars(){
+        return stars;
     }
 }

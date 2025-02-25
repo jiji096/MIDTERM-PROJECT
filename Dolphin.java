@@ -11,7 +11,7 @@ public class Dolphin implements DrawingObject {
     }
 
     public void rotate(){
-        rotation += 30;
+        rotation += 60;
     }
 
     public void rotateCC(){
@@ -61,7 +61,6 @@ public class Dolphin implements DrawingObject {
         lower.moveTo(240.8,415.8);
         lower.curveTo(229,417.9,239,344.5,300.2,331);
         lower.moveTo(300.2,331);
-        //lower.curveTo(301.8,353.7,253,346,240.8,415.8);
         lower.curveTo(301.8,353.7,274.4,345.8,256.2,376.9);
         lower.curveTo(245.3,392.6,244.8,416.4,240.8,415.8);
 
@@ -83,7 +82,6 @@ public class Dolphin implements DrawingObject {
 
         Ellipse2D.Double eye = new Ellipse2D.Double(340,313,6,6);
        
-
         // rotation
         g2d.rotate(Math.toRadians(rotation),x,y);
 

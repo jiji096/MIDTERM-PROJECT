@@ -75,11 +75,13 @@ public class SceneFrame extends JComponent implements ActionListener {
         Rainbow rb = scene.getRainbow();
         Sun sun = scene.getSun();
         Sky sky = scene.getSky();
+        Stars stars = scene.getStars();
 
         d.rotate();
         sun.rotate();
         f1.moveLeft();
         sky.rotate();
+        //stars.rotate();
         
         day+=5;
         if (day > 60 && day < 270) {
@@ -100,6 +102,20 @@ public class SceneFrame extends JComponent implements ActionListener {
         else {
             rb.turnTransparent();
         }
+
+        // for stars
+        // if (day > 60 && day < 270) {
+        //     stars.setTransparency(100);
+        // }
+       
+        // if (day > 270 && day < 360) {
+        //     stars.turnTransparent();
+        // }
+        // else {
+        //     stars.turnOpaque();
+
+        // }
+
         System.out.println(rb.getTransparency());
         System.out.println("day: " + day);
 
