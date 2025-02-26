@@ -38,7 +38,7 @@ public class Rainbow implements DrawingObject {
         Circle green = new Circle(160,180,480,new Color(219, 239, 199, transparency));
         Circle blue = new Circle(180,200,440,new Color(199, 220, 255, transparency));
         Circle purple = new Circle(200,220,400,new Color(241, 216, 255, transparency));
-        Circle white = new Circle(220,240,360,new Color(255, 255, 255, transparency));
+        Circle white = new Circle(220,240,360,new Color(255, 255, 255, 0));
 
         // Circle red = new Circle(100,120,600,Color.RED);
         // Circle orange = new Circle(120,140,560,new Color(255, 140, 0));
