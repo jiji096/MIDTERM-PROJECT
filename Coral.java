@@ -2,13 +2,10 @@ import java.awt.*;
 import java.awt.geom.*;
 
 public class Coral implements DrawingObject {
-    private double x, y, x2, y2;
+    private double x;
 
     public Coral(double x){
         this.x = x;
-        // this.y = y;
-        // this.x2 = x2;
-        // this.y2 = y2;
     }
 
     public void draw(Graphics2D g2d){
@@ -18,15 +15,7 @@ public class Coral implements DrawingObject {
         g2d.setRenderingHints(rh);
 
         Path2D.Double back = new Path2D.Double();
-        //back.moveTo(x,y);
         back.moveTo(x+177.8,598.9);
-        
-        // back.curveTo(x+7.4,y+4,x+13.5,y-5.7,x+14.2,y-14.7);
-        // back.curveTo(x+16.45,y-22.8,x+23.6,y-21.3,x+23.4,y-27.9);
-        // back.curveTo(x+25.16,y-33.1,x+31.4,y-37.56,x+26.6,y-40.7);
-        // back.curveTo(x+23.65,y-38.7,x+23.8,y-31.97,x+20.13,y-35.44);
-        // back.curveTo(x+19.6,y-38.17,x+22.05,y-42.95,x+15.74,y-41.2);
-        // back.curveTo();
 
         back.curveTo(x+185.2,602.9,x+191.3,593.2,x+192,584.2);
         back.curveTo(x+194.25,576.1,x+201.4,577.6,x+201.2,571);

@@ -22,8 +22,6 @@ public class SceneCanvas extends JComponent {
         width = w;
         height = h;
 
-        
-
         dolphin = new Dolphin(450,700);
         mrSun = new Sun();
         
@@ -123,5 +121,9 @@ public class SceneCanvas extends JComponent {
 
     public Sky getSky(){
         return sky;
+    }
+
+    public Stars getStars(){
+        return stars;
     }
 }
