@@ -15,14 +15,15 @@ public class SceneCanvas extends JComponent {
     private Rainbow rainbow;
     private Sky sky;
     private Cloud cloud1, cloud2, cloud3, cloud4, cloud5, cloud6;
-    private Coral coral1, coral2, coral3;
+    private Coral coral1, coral2;
+    private Stars stars;
     private ArrayList<DrawingObject> elements = new ArrayList<>();
     
     public SceneCanvas(int w, int h){
         width = w;
         height = h;
 
-        dolphin = new Dolphin(450,700);
+        dolphin = new Dolphin(400,1100);
         mrSun = new Sun();
         
         Color blue = new Color(100,149,237);
@@ -37,17 +38,20 @@ public class SceneCanvas extends JComponent {
         fish1 = new Fish1();
         dagat = new Waves();
         chest = new Chest();
-        record = new RecordPlayer();
+        record = new RecordPlayer(707.33,523);
         rainbow = new Rainbow();
         coral1 = new Coral(0);
         coral2 = new Coral(300);
-        coral3 = new Coral(430);
+        //coral3 = new Coral(430);
 
         sky = new Sky(400, 0, new Color( 176, 206, 255), 400, 600, new Color (59, 0, 100 ));
+        stars = new Stars(400,400);
 
         elements.add(sky);
-        elements.add(dolphin);
+        elements.add(stars);
         elements.add(rainbow);
+        elements.add(dagat);
+        elements.add(dolphin);
         elements.add(mrSun);
         elements.add(cloud1);
         elements.add(cloud2);
@@ -55,7 +59,6 @@ public class SceneCanvas extends JComponent {
         elements.add(cloud4);
         elements.add(cloud5);
         elements.add(cloud6);
-        elements.add(dagat);
         elements.add(fish1);
         elements.add(record);
         elements.add(coral1);
