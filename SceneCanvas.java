@@ -42,7 +42,6 @@ public class SceneCanvas extends JComponent {
         rainbow = new Rainbow();
         coral1 = new Coral(0);
         coral2 = new Coral(300);
-        //coral3 = new Coral(430);
 
         sky = new Sky(400, 0, new Color( 176, 206, 255), 400, 600, new Color (59, 0, 100 ));
         stars = new Stars(400,400);
