@@ -28,7 +28,7 @@ public class Sun implements DrawingObject{
         buwan.draw(g2d);
         araw.draw(g2d);
         //Triangle rays = new Triangle(755, 50, 785, 70, 755, 90, new Color(255, 210, 18));
-        Triangle rays = new Triangle(755, 50, 785, 70, 755, 90, new Color(255, 210, 18));
+        Triangle rays = new Triangle(755, 70, 785, 70, 755, 90, new Color(255, 210, 18));
         rays.draw(g2d);
 
 
