@@ -22,7 +22,7 @@ public class SceneFrame extends JComponent implements ActionListener {
         clockwise = new JButton("clockwise");
         scene = new SceneCanvas(w, h);
 
-        loopie = new Timer(20, this);
+        loopie = new Timer(100, this);
     }
 
     public void setUpGUI(){
@@ -84,18 +84,14 @@ public class SceneFrame extends JComponent implements ActionListener {
         r.rotate();
         //stars.rotate();
         
-        day+=5;
-        if (day > 60 && day < 270) {
-            rb.setTransparency(0);
-        }
-        if (day <= 30 || day >= 270) {
-            state2 = 0;
-        }
-        else {
-            state2 = 1;
-        }
+        day+=5/3;
+        //rainbow
         if (day == 360) {
             day = 0;
+        }
+        
+        if (day > 60 && day < 270) {
+            rb.setTransparency(0);
         }
         if (day > 270 && day < 360) {
             rb.turnOpaque();
@@ -104,20 +100,18 @@ public class SceneFrame extends JComponent implements ActionListener {
             rb.turnTransparent();
         }
 
-        // for stars
-        // if (day > 60 && day < 270) {
-        //     stars.setTransparency(100);
-        // }
-       
-        // if (day > 270 && day < 360) {
-        //     stars.turnTransparent();
-        // }
-        // else {
-        //     stars.turnOpaque();
+        //starts
+        if (day < 60 || day > 270) {
+            stars.setTransparency(0);
+        }
+        if (day > 270 && day < 360) {
+            stars.turnTransparent();
+        }
+        else {
+            stars.turnOpaque();
+        }
 
-        // }
-
-        System.out.println(rb.getTransparency());
+        System.out.println(stars.getTransparency());
         System.out.println("day: " + day);
 
         scene.repaint();

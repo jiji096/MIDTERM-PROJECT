@@ -11,6 +11,7 @@ public class Stars implements DrawingObject{
     private int white = 60;
     //private int transparency = 200;
     private double x, y, rotation;
+    private int transparency;
 
     public Stars(double x, double y){
         this.x = x;
@@ -23,26 +24,26 @@ public class Stars implements DrawingObject{
         rotation += 30;
     }
 
-    // public void turnTransparent() {
-    //     if (transparency <= 255 && transparency > 20) {
-    //         transparency-=20;
-    //     }
-    //     else transparency = 0;
-    // }
+    public void turnTransparent() {
+        if (transparency <= 255 && transparency > 20) {
+            transparency-=20;
+        }
+        else transparency = 0;
+    }
 
-    // public void turnOpaque() {
-    //     if (transparency+30 - 255 > 0) {
-    //         transparency = 255;
-    //     }
-    //     else transparency+=30;
-    // }
+    public void turnOpaque() {
+        if (transparency+30 - 255 > 0) {
+            transparency = 255;
+        }
+        else transparency+=30;
+    }
 
-    // public void setTransparency(int x) {
-    //     transparency = x;
-    // }
-    // public int getTransparency() {
-    //     return transparency;
-    // }
+    public void setTransparency(int x) {
+        transparency = x;
+    }
+    public int getTransparency() {
+        return transparency;
+    }
 
     private void starsPls(){
         for (int i = 0; i < yellow; i++){
