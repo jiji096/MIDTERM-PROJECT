@@ -150,18 +150,18 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
             rb.turnTransparent();
         }
 
-        //starts
+        //stars
         if (day < 60 || day > 270) {
             stars.setTransparency(0);
         }
-        if (day > 270 && day < 360) {
+        if (day > 240 && day < 360) {
             stars.turnTransparent();
         }
         else {
             stars.turnOpaque();
         }
 
-        System.out.println(stars.getTransparency());
+        System.out.println("Star: " +stars.getTransparency());
         System.out.println("day: " + day);
 
         scene.repaint();

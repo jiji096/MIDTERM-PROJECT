@@ -26,16 +26,16 @@ public class Stars implements DrawingObject{
 
     public void turnTransparent() {
         if (transparency <= 255 && transparency > 20) {
-            transparency-=20;
+            transparency-=10;
         }
         else transparency = 0;
     }
 
     public void turnOpaque() {
-        if (transparency+30 - 255 > 0) {
+        if (transparency+6 - 255 > 0) {
             transparency = 255;
         }
-        else transparency+=30;
+        else transparency+=6;
     }
 
     public void setTransparency(int x) {
@@ -49,14 +49,14 @@ public class Stars implements DrawingObject{
         for (int i = 0; i < yellow; i++){
             double x = random.nextDouble(800);
             double y = random.nextDouble(300);
-            yellowStars.add(new Square(x, y, 15, new Color(255, 255, 0)));
+            yellowStars.add(new Square(x, y, 15));
         }
 
         for (int i = 0; i < white; i++){
             double x = random.nextDouble(800);
             double y = random.nextDouble(300);
             int size = random.nextInt(6) + 5;
-            whiteStars.add(new Square(x, y, size, new Color(255, 255, 255)));
+            whiteStars.add(new Square(x, y, size));
         }
     }
 
@@ -74,6 +74,7 @@ public class Stars implements DrawingObject{
             //AffineTransform reset = g2d.getTransform();
             // g2d.translate(x,y);
             //g2d.rotate(rotation);
+            g2d.setColor(new Color(255, 255, 0, transparency));
             ystars.draw(g2d);
             //g2d.setTransform(reset);
         }
@@ -82,6 +83,7 @@ public class Stars implements DrawingObject{
             //AffineTransform reset = g2d.getTransform();
             // g2d.translate();
             //g2d.rotate(rotation);
+            
             wstars.draw(g2d);
             //g2d.setTransform(reset);
         }
