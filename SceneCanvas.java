@@ -16,6 +16,7 @@ public class SceneCanvas extends JComponent {
     private Sky sky;
     private Cloud cloud1, cloud2, cloud3, cloud4, cloud5, cloud6;
     private Coral coral1, coral2, coral3;
+    private Stars stars;
     private ArrayList<DrawingObject> elements = new ArrayList<>();
     
     public SceneCanvas(int w, int h){
@@ -44,8 +45,10 @@ public class SceneCanvas extends JComponent {
         coral3 = new Coral(430);
 
         sky = new Sky(400, 0, new Color( 176, 206, 255), 400, 600, new Color (59, 0, 100 ));
+        stars = new Stars(0, 0);
 
         elements.add(sky);
+        elements.add(stars);
         elements.add(dolphin);
         elements.add(rainbow);
         elements.add(mrSun);
