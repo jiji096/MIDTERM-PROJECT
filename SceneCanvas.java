@@ -43,7 +43,7 @@ public class SceneCanvas extends JComponent {
         coral1 = new Coral(0);
         coral2 = new Coral(300);
 
-        sky = new Sky(400, 0, new Color( 176, 206, 255), 400, 600, new Color (59, 0, 100 ));
+        sky = new Sky(400, 0, new Color(176, 206, 255), 400, 600, new Color (59, 0, 100 ));
         stars = new Stars(400,400);
 
         elements.add(sky);
