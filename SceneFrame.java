@@ -1,41 +1,60 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.sound.sampled.*;
+import java.io.File;
+import java.io.IOException;
 
-public class SceneFrame extends JComponent implements ActionListener { 
+public class SceneFrame extends JComponent implements ActionListener, MouseListener { 
     private JFrame frame;
     private JButton rotate, clockwise;
     private SceneCanvas scene;
     private int width;
     private int height;
     private int state1 = 0;
-    private int state2 = 0;
+    //private int state2 = 0;
     private int day = 0;
     private Timer loopie;
+    private JLabel areaClick;
+    private File music;
+    private Clip clip;
+
     
     public SceneFrame(int w, int h){
         frame = new JFrame();
         width = w;
         height = h;
        
-        rotate = new JButton("rotate");
-        clockwise = new JButton("clockwise");
+        // rotate = new JButton("rotate");
+        // clockwise = new JButton("clockwise");
         scene = new SceneCanvas(w, h);
-
         loopie = new Timer(100, this);
     }
 
-    public void setUpGUI(){
-        Container contentPane = frame.getContentPane();
+    public void setUpGUI() throws UnsupportedAudioFileException, IOException, LineUnavailableException{
+        //Container contentPane = frame.getContentPane();
         scene.setPreferredSize(new Dimension(width,height));
 
-        JPanel buttons = new JPanel();
-        buttons.setLayout(new GridLayout(1,2));
-        buttons.add(rotate);
-        buttons.add(clockwise);
+        // JPanel buttons = new JPanel();
+        // buttons.setLayout(new GridLayout(1,2));
+        // buttons.add(rotate);
+        // buttons.add(clockwise);
 
-        contentPane.add(scene, "Center");
-        contentPane.add(buttons, BorderLayout.SOUTH);
+        music = new File("Symphony.AIFF");
+        AudioInputStream audioStream = AudioSystem.getAudioInputStream(music);
+        clip = AudioSystem.getClip();
+        clip.open(audioStream);
+
+        areaClick = new JLabel();
+        areaClick.setBounds(692,510, 30, 30);
+        areaClick.setOpaque(false);
+        areaClick.addMouseListener(this);
+
+        //contentPane.add(scene, "Center");
+        //contentPane.add(buttons, BorderLayout.SOUTH);
+        //contentPane.add(areaClick, BorderLayout.SOUTH);
+        frame.add(areaClick);
+        frame.add(scene);
 
         frame.setTitle("Midterm Project - Lopez - Nellas");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,28 +62,59 @@ public class SceneFrame extends JComponent implements ActionListener {
         frame.setFocusable(true);
         frame.setVisible(true);
 
-        rotate.addActionListener(this);
-        clockwise.addActionListener(this);
+
+        // rotate.addActionListener(this);
+        // clockwise.addActionListener(this);
+        this.addMouseListener(this);
+    }
+
+    @Override 
+    public void mouseClicked(MouseEvent e){
+        if (e.getSource() == areaClick){
+            state1+=1;
+            if (state1%2 == 0) {
+                if(!loopie.isRunning()){
+                    loopie.start();
+                    clip.start();
+                }
+            }
+            else {
+                if(loopie.isRunning()){
+                    loopie.stop();
+                    clip.stop();
+                }
+            }
+        }
+
+        // else if (e.getSource() == areaClick){
+        // }
     }
 
     @Override
-    public void actionPerformed(ActionEvent e){
-        //JButton b = (JButton) e.getSource();
+    public void mousePressed(MouseEvent e){
 
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e){
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e){
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e){
+
+    }
+
+
+    @Override
+    public void actionPerformed(ActionEvent e){
         if (e.getSource() == loopie){
             update();
-        }
-
-        else if (e.getSource() == rotate){
-            if(!loopie.isRunning()){
-                loopie.start();
-            }
-        }
-
-        else if (e.getSource() == clockwise){
-            if(loopie.isRunning()){
-                loopie.stop();
-            }
         }
     }
 
@@ -75,7 +125,7 @@ public class SceneFrame extends JComponent implements ActionListener {
         Rainbow rb = scene.getRainbow();
         Sun sun = scene.getSun();
         Sky sky = scene.getSky();
-        //Stars stars = scene.getStars();
+        Stars stars = scene.getStars();
 
         d.rotate();
         sun.rotate();
