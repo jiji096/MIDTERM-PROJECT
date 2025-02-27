@@ -1,9 +1,9 @@
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.*;
-import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
+import javax.sound.sampled.*;
+import javax.swing.*;
 
 public class SceneFrame extends JComponent implements ActionListener, MouseListener { 
     private JFrame frame;
@@ -40,7 +40,7 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
         // buttons.add(rotate);
         // buttons.add(clockwise);
 
-        music = new File("Symphony.AIFF");
+        music = new File("audio.AIFF");
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(music);
         clip = AudioSystem.getClip();
         clip.open(audioStream);
