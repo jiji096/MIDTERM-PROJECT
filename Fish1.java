@@ -8,12 +8,16 @@ public class Fish1 implements DrawingObject {
 
     public void moveLeft() {
         x+=10;
+        if (x > 800) {
+            x = -208.4;
+        }
+        System.out.println("x: " + x);
     }
 
     public double getX() {
         return x;
     }
-    
+
     public void draw(Graphics2D g2d) {
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,
