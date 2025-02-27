@@ -48,9 +48,9 @@ public class SceneCanvas extends JComponent {
 
         elements.add(sky);
         elements.add(stars);
-        elements.add(dolphin);
         elements.add(rainbow);
         elements.add(dagat);
+        elements.add(dolphin);
         elements.add(mrSun);
         elements.add(cloud1);
         elements.add(cloud2);
