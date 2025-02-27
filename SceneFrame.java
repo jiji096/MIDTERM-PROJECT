@@ -75,12 +75,13 @@ public class SceneFrame extends JComponent implements ActionListener {
         Rainbow rb = scene.getRainbow();
         Sun sun = scene.getSun();
         Sky sky = scene.getSky();
-        Stars stars = scene.getStars();
+        //Stars stars = scene.getStars();
 
         d.rotate();
         sun.rotate();
         f1.moveLeft();
         sky.rotate();
+        r.rotate();
         //stars.rotate();
         
         day+=5/3;

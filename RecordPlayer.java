@@ -4,18 +4,17 @@ import javax.swing.*;
 
 public class RecordPlayer extends JComponent implements DrawingObject{    
 
-    private double rotation, truth, x, y, size;
+    private double rotation, x0, y0, size;
 
-    public RecordPlayer () {
+
+    public RecordPlayer (double x, double y) {
+        x0 = x;
+        y0 = y;
         rotation = 0;
-        truth = 0;
-        x = 650;
-        y = 465;
-        size = 115;
     }
 
     public void rotate() {
-        rotation+=10;
+        rotation += 10;
     }
 
     public void draw(Graphics2D g2d){
@@ -25,10 +24,14 @@ public class RecordPlayer extends JComponent implements DrawingObject{
         g2d.setRenderingHints(rh);
 
         AffineTransform reset = g2d.getTransform();
+        g2d.rotate(Math.toRadians(rotation),x0,y0);
 
         Circle outer = new Circle(645,460,125, Color.BLACK);
         outer.draw(g2d);
 
+        int x = 650;
+        int y = 465;
+        int size = 115;
         Ellipse2D.Double rings = new Ellipse2D.Double(x, y, size, size);
         g2d.setColor(new Color(55, 54, 54));
         g2d.draw(rings);
@@ -47,8 +50,8 @@ public class RecordPlayer extends JComponent implements DrawingObject{
         bg2.draw(g2d);
         play.draw(g2d);
 
-
-
+        g2d.setTransform(reset);
 
     }
+    
 }
