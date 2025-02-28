@@ -76,6 +76,7 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
                 if(!loopie.isRunning()){
                     loopie.start();
                     clip.start();
+                    clip.loop(Clip.LOOP_CONTINUOUSLY);
                 }
             }
             else {
@@ -86,8 +87,6 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
             }
         }
 
-        // else if (e.getSource() == areaClick){
-        // }
     }
 
     @Override
@@ -122,6 +121,7 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
         Dolphin d = scene.getDolphin();
         RecordPlayer r = scene.getRecordPlayer();
         Fish1 f1 = scene.getFish1();
+        Fish2 f2 = scene.getFish2();
         Rainbow rb = scene.getRainbow();
         Sun sun = scene.getSun();
         Sky sky = scene.getSky();
@@ -130,6 +130,7 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
         d.rotate();
         sun.rotate();
         f1.moveLeft();
+        f2.move();
         sky.rotate();
         r.rotate();
         //stars.rotate();
@@ -161,8 +162,8 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
             stars.turnOpaque();
         }
 
-        System.out.println("Star: " +stars.getTransparency());
-        System.out.println("day: " + day);
+        // System.out.println("Star: " +stars.getTransparency());
+        // System.out.println("day: " + day);
 
         scene.repaint();
 

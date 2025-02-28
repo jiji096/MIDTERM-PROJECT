@@ -11,7 +11,7 @@ public class Fish1 implements DrawingObject {
         if (x > 800) {
             x = -208.4;
         }
-        System.out.println("x: " + x);
+        //System.out.println("x: " + x);
     }
 
     public double getX() {

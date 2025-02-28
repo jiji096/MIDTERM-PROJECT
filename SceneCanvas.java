@@ -7,11 +7,13 @@ public class SceneCanvas extends JComponent {
     private int height;
     private Dolphin dolphin;
     private Fish1 fish1;
+    private Fish2 fish2;
     private RecordPlayer record;
     private Sun mrSun;
     private Rainbow rainbow;
     private Sky sky;
     private Stars stars;
+    private Ocean ocean;
     
     private ArrayList<DrawingObject> elements = new ArrayList<>();
     
@@ -24,6 +26,7 @@ public class SceneCanvas extends JComponent {
         
         dolphin = new Dolphin(400,1100);
         fish1 = new Fish1();
+        fish2 = new Fish2();
         record = new RecordPlayer(707.33,523);
         mrSun = new Sun();
         rainbow = new Rainbow();
@@ -43,9 +46,11 @@ public class SceneCanvas extends JComponent {
         elements.add(new Cloud(525, 85, 70, darkBlue));
         elements.add(new Cloud(520,80,70,blue));
         elements.add(fish1);
+        elements.add(fish2);
         elements.add(record);
         elements.add(new Coral(0));
-        elements.add(new Coral(300));
+        elements.add(new Coral(250));
+        elements.add(new Ocean());
     }
 
     @Override
@@ -72,6 +77,10 @@ public class SceneCanvas extends JComponent {
 
     public Fish1 getFish1() {
         return fish1;
+    }
+
+    public Fish2 getFish2() {
+        return fish2;
     }
 
     public RecordPlayer getRecordPlayer(){
