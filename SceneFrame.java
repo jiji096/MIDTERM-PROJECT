@@ -120,6 +120,7 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
 
     private void update(){
         Dolphin d = scene.getDolphin();
+        smallDolphin d1 = scene.getSmallDolphin();
         RecordPlayer r = scene.getRecordPlayer();
         Fish1 f1 = scene.getFish1();
         Rainbow rb = scene.getRainbow();
@@ -128,6 +129,7 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
         Stars stars = scene.getStars();
 
         d.rotate();
+        d1.rotate();
         sun.rotate();
         f1.moveLeft();
         sky.rotate();

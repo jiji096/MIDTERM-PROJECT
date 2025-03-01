@@ -6,6 +6,7 @@ public class SceneCanvas extends JComponent {
     private int width;
     private int height;
     private Dolphin dolphin;
+    private smallDolphin dolphin1;
     private Fish1 fish1;
     private RecordPlayer record;
     private Sun mrSun;
@@ -23,6 +24,7 @@ public class SceneCanvas extends JComponent {
         Color darkBlue = new Color(	66, 117, 209);
         
         dolphin = new Dolphin(400,1100);
+        dolphin1 = new smallDolphin(450, 1000);
         fish1 = new Fish1();
         record = new RecordPlayer(707.33,523);
         mrSun = new Sun();
@@ -35,6 +37,7 @@ public class SceneCanvas extends JComponent {
         elements.add(rainbow);
         elements.add(new Waves());
         elements.add(dolphin);
+        elements.add(dolphin1);
         elements.add(mrSun);
         elements.add(new Cloud(105, 70, 70, darkBlue));
         elements.add(new Cloud(100,65,70,blue));
@@ -68,6 +71,10 @@ public class SceneCanvas extends JComponent {
 
     public Dolphin getDolphin(){
         return dolphin;
+    }
+
+    public smallDolphin getSmallDolphin(){
+        return dolphin1;
     }
 
     public Fish1 getFish1() {
