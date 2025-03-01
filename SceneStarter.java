@@ -6,7 +6,5 @@ public class SceneStarter {
     public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         SceneFrame scene = new SceneFrame(800, 600);
         scene.setUpGUI();
-        //scene.setUpButtonListener();
-
     }  
 }
