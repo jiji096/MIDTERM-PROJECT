@@ -27,7 +27,7 @@ public class SceneCanvas extends JComponent {
         Color darkBlue = new Color(	66, 117, 209);
         
         dolphin = new Dolphin(400,1100);
-        dolphin1 = new smallDolphin(450, 1000);
+        dolphin1 = new smallDolphin(200, 800);
         fish1 = new Fish1();
         fish2 = new Fish2();
         fish3 = new Fish3();
