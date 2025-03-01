@@ -11,7 +11,7 @@ public class smallDolphin implements DrawingObject {
     }
 
     public void rotate(){
-        rotation -=9;
+        rotation +=6;
     }
 
 
@@ -80,9 +80,9 @@ public class smallDolphin implements DrawingObject {
         Ellipse2D.Double eye = new Ellipse2D.Double(x+340,313,6,6);
        
         // rotation
-        g2d.rotate(Math.toRadians(rotation),-x,y);
         g2d.scale(-1, 1);
         g2d.translate(-800, 0);
+        g2d.rotate(Math.toRadians(rotation),-x,y);
 
         g2d.setColor(new Color(	113, 132, 150));
         g2d.fill(upper);
