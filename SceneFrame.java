@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.sound.sampled.*;
 import javax.swing.*;
 
+
 public class SceneFrame extends JComponent implements ActionListener, MouseListener { 
     private JFrame frame;
     private JButton rotate, clockwise;
@@ -15,7 +16,7 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
     //private int state2 = 0;
     private int day = 0;
     private Timer loopie;
-    private JLabel areaClick;
+    private JLabel playClick;
     private File music;
     private Clip clip;
 
@@ -27,7 +28,7 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
        
         // rotate = new JButton("rotate");
         // clockwise = new JButton("clockwise");
-        scene = new SceneCanvas(w, h);
+        scene = new SceneCanvas();
         loopie = new Timer(100, this);
     }
 
@@ -45,15 +46,15 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
         clip = AudioSystem.getClip();
         clip.open(audioStream);
 
-        areaClick = new JLabel();
-        areaClick.setBounds(692,510, 30, 30);
-        areaClick.setOpaque(false);
-        areaClick.addMouseListener(this);
+        playClick = new JLabel();
+        playClick.setBounds(692,510, 30, 30);
+        playClick.setOpaque(false);
+        playClick.addMouseListener(this);
 
         //contentPane.add(scene, "Center");
         //contentPane.add(buttons, BorderLayout.SOUTH);
         //contentPane.add(areaClick, BorderLayout.SOUTH);
-        frame.add(areaClick);
+        frame.add(playClick);
         frame.add(scene);
 
         frame.setTitle("Midterm Project - Lopez - Nellas");
@@ -70,7 +71,9 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
 
     @Override 
     public void mouseClicked(MouseEvent e){
-        if (e.getSource() == areaClick){
+        Chest chest = (Chest) scene.getObject("Chest");
+        if (e.getSource() == playClick){
+            chest.changeState();
             state1+=1;
             if (state1%2 == 0) {
                 if(!loopie.isRunning()){
@@ -117,16 +120,16 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
     }
 
     private void update(){
-        Dolphin d = scene.getDolphin();
-        smallDolphin d1 = scene.getSmallDolphin();
-        RecordPlayer r = scene.getRecordPlayer();
-        Fish1 f1 = scene.getFish1();
-        Fish2 f2 = scene.getFish2();
-        Fish3 f3 = scene.getFish3();
-        Rainbow rb = scene.getRainbow();
-        Sun sun = scene.getSun();
-        Sky sky = scene.getSky();
-        Stars stars = scene.getStars();
+        Dolphin d = (Dolphin) scene.getObject("Dolphin");
+        smallDolphin d1 = (smallDolphin) scene.getObject("smallDolphin");
+        RecordPlayer r = (RecordPlayer)  scene.getObject("RecordPlayer");
+        Fish1 f1 = (Fish1) scene.getObject("Fish1");
+        Fish2 f2 = (Fish2) scene.getObject("Fish2");
+        Fish3 f3 = (Fish3) scene.getObject("Fish3");
+        Rainbow rb = (Rainbow) scene.getObject("Rainbow");
+        Sun sun = (Sun) scene.getObject("Sun");
+        Sky sky = (Sky) scene.getObject("Sky");
+        Stars stars = (Stars) scene.getObject("Stars");
 
         d.rotate();
         d1.rotate();
@@ -136,7 +139,6 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
         f3.move();
         sky.rotate();
         r.rotate();
-        //stars.rotate();
         
         day+=5/3;
         //rainbow
