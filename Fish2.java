@@ -78,13 +78,13 @@ public class Fish2 implements DrawingObject {
 
         AffineTransform reset = g2d.getTransform();
 
-        g2d.setColor(new Color(66, 135, 132));
+        g2d.setColor(new Color(4, 139, 168));
         g2d.fill(outline);
 
-        g2d.setColor(new Color(41, 57, 56));
+        g2d.setColor(new Color(	46, 64, 87));
         g2d.fill(dorsal);
 
-        g2d.setColor(new Color(41, 57, 56));
+        g2d.setColor(new Color(	46, 64, 87));
         g2d.fill(under);
 
         g2d.setColor(new Color(255, 235, 101));
@@ -96,7 +96,7 @@ public class Fish2 implements DrawingObject {
         g2d.setColor(new Color(255, 235, 101));
         g2d.fill(pattern3);
 
-        g2d.setColor(new Color(41, 57, 56));
+        g2d.setColor(new Color(	46, 64, 87));
         g2d.fill(fin);
 
         g2d.setColor(new Color(41, 57, 56));

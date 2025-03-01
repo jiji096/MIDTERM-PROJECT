@@ -3,9 +3,12 @@ import java.awt.geom.*;
 
 public class Coral implements DrawingObject {
     private double x;
+    private Color color1, color2;
 
-    public Coral(double x){
+    public Coral(double x, Color color1, Color color2){
         this.x = x;
+        this.color1 = color1;
+        this.color2 = color2;
     }
 
     public void draw(Graphics2D g2d){
@@ -57,7 +60,7 @@ public class Coral implements DrawingObject {
         back.curveTo(x+151.56,590.7,x+150.86,586.4,x+166.1,598.35);
         back.curveTo(x+173.2,602.34,x+173.06,594.2,x+177.8,598.9);
 
-        g2d.setColor(new Color(53, 150, 147));
+        g2d.setColor(color2);
         g2d.fill(back);
 
         Path2D.Double front = new Path2D.Double();
@@ -116,7 +119,7 @@ public class Coral implements DrawingObject {
         front.curveTo(x+141.24,589.5,x+152.3,594.38,x+160,593.04);
         front.curveTo(x+165.3,592.2,x+171.25,601.5,x+176.4,599.1);
 
-        g2d.setColor(new Color(76, 190, 193));
+        g2d.setColor(color1);
         g2d.fill(front);
     }
 }
