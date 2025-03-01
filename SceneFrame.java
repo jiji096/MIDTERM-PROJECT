@@ -86,7 +86,6 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
                 }
             }
         }
-
     }
 
     @Override
@@ -122,6 +121,7 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
         RecordPlayer r = scene.getRecordPlayer();
         Fish1 f1 = scene.getFish1();
         Fish2 f2 = scene.getFish2();
+        Fish3 f3 = scene.getFish3();
         Rainbow rb = scene.getRainbow();
         Sun sun = scene.getSun();
         Sky sky = scene.getSky();
@@ -131,6 +131,7 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
         sun.rotate();
         f1.moveLeft();
         f2.move();
+        f3.move();
         sky.rotate();
         r.rotate();
         //stars.rotate();
