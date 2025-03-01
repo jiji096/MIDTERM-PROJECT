@@ -10,7 +10,7 @@ public class Sky implements DrawingObject{
     private Color color2;
     private double rotation;
 
-    public Sky(float x1, float y1, Color color1, float x2, float y2, Color color2){
+    public Sky(int x1, int y1, Color color1, int x2, int y2, Color color2){
         this.x1 = x1;
         this.y1 = y1;
         this.color1 = color1;

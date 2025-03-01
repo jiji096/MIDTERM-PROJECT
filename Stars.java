@@ -83,7 +83,7 @@ public class Stars implements DrawingObject{
             //AffineTransform reset = g2d.getTransform();
             // g2d.translate();
             //g2d.rotate(rotation);
-            
+            g2d.setColor(new Color(255, 255, 255, transparency));
             wstars.draw(g2d);
             //g2d.setTransform(reset);
         }

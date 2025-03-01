@@ -11,12 +11,10 @@ public class Dolphin implements DrawingObject {
     }
 
     public void rotate(){
-        rotation +=12;
+        rotation +=9;
     }
 
-    public void rotateCC(){
-        rotation -= 10;
-    }
+
 
     public void draw(Graphics2D g2d) {
         AffineTransform reset = g2d.getTransform();
