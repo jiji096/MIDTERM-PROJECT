@@ -1,7 +1,12 @@
 import java.awt.*;
 import java.awt.geom.*;
+import java.util.*;
+
 
 public class Ocean implements DrawingObject {
+    private ArrayList<Circle> leftBubbles = new ArrayList<Circle>();
+    private ArrayList<Circle> rightBubbles = new ArrayList<Circle>();
+
 
     public Ocean(){
         
@@ -13,6 +18,7 @@ public class Ocean implements DrawingObject {
             RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHints(rh);
 
+        // rock 1
         Path2D.Double rock1 = new Path2D.Double();
         rock1.moveTo(228.3,600);
         rock1.curveTo(225.7,584.4,244.8,584.8,245.6,585);
@@ -54,6 +60,8 @@ public class Ocean implements DrawingObject {
         g2d.setColor(new Color(86, 97, 118));
         g2d.fill(highlight3);
 
+
+        // rock 2
         Path2D.Double rock2= new Path2D.Double();
         rock2.moveTo(498.5,600.4);
         rock2.curveTo(527.1,585.5,526,584.7,518,602);
@@ -65,7 +73,6 @@ public class Ocean implements DrawingObject {
 
         g2d.setColor(new Color(120, 127, 141));
         g2d.fill(rock2);
-
 
         Path2D.Double moss = new Path2D.Double();
         moss.moveTo(471.8,600.7);
@@ -98,6 +105,43 @@ public class Ocean implements DrawingObject {
 
         g2d.setColor(new Color(107, 156, 119));
         g2d.fill(moss3);
+
+
+        // bubbles left side 
+        leftBubbles.add(new Circle(125,499,10,Color.WHITE));
+        leftBubbles.add(new Circle(138,505,10,Color.WHITE));
+        leftBubbles.add(new Circle(122,519,9,Color.WHITE));
+        leftBubbles.add(new Circle(137,494,4,Color.WHITE));
+        leftBubbles.add(new Circle(146,501.7,7,Color.WHITE));
+        leftBubbles.add(new Circle(134,520.5,5,Color.WHITE));
+        leftBubbles.add(new Circle(135,529.5,10,Color.WHITE));
+        leftBubbles.add(new Circle(132,541.4,7,Color.WHITE));
+        leftBubbles.add(new Circle(144,524.5,8,Color.WHITE));
+
+        for (Circle bubbles : leftBubbles){
+            bubbles.draw(g2d);
+        }
+
+        rightBubbles.add(new Circle(470,535.7,10,Color.WHITE));
+        rightBubbles.add(new Circle(487,542,15,Color.WHITE));
+        rightBubbles.add(new Circle(481,558,10,Color.WHITE));
+        rightBubbles.add(new Circle(476,551,6,Color.WHITE));
+        rightBubbles.add(new Circle(485,529,5,Color.WHITE));
+        rightBubbles.add(new Circle(488,532,7,Color.WHITE));
+        rightBubbles.add(new Circle(487,522,4,Color.WHITE));
+        rightBubbles.add(new Circle(482,572,4,Color.WHITE));
+        rightBubbles.add(new Circle(493,562,6,Color.WHITE));
+
+
+        for (Circle bubbles : rightBubbles){
+            bubbles.draw(g2d);
+        }
+
+
+
+
+
+
 
 
 

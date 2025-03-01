@@ -24,6 +24,7 @@ public class SceneCanvas extends JComponent {
         elements.add(new Cloud(0,75,70,blue));
         elements.add(new Cloud(525, 85, 70, darkBlue));
         elements.add(new Cloud(520,80,70,blue));
+
         elements.add(new Fish1());
         elements.add(new Fish2());
         elements.add(new Fish3());
@@ -32,6 +33,9 @@ public class SceneCanvas extends JComponent {
         elements.add(new Coral(0));
         elements.add(new Coral(250));
         elements.add(new Ocean());
+        elements.add(new Coral(0,new Color(76, 190, 193),new Color(53, 150, 147)));
+        elements.add(new Coral(250, new Color(180, 221, 93), new Color(136, 166, 73)));
+        elements.add(new Coral(610, new Color(159, 225, 255), new Color(93, 135, 155)));
     }
 
     @Override
