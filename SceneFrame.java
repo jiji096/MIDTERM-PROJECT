@@ -1,3 +1,32 @@
+/** 
+    This is the SceneFrame class, which extends JComponent and 
+    implements ActionListener and MouseListener. It is the main GUI
+    class and contains the JFrame for the scene. It includes a setUpGUI
+    method to set up and display the JFrame, as well as event listeners
+    to handle user interaction and animations.
+    
+    This class contains
+    the JFrame for the GUI and has a setUpGUI method that sets up the JFrame.
+
+
+    @author Janelle Angela C. Lopez (242682)
+    @author Aldrin Joseph T. Nellas (243215)
+	@version February 15, 2025
+	
+	I have not discussed the Java language code in my program 
+	with anyone other than my instructor or the teaching assistants 
+	assigned to this course.
+
+	I have not used Java language code obtained from another student, 
+	or any other unauthorized source, either modified or unmodified.
+
+	If any Java language code or documentation used in my program 
+	was obtained from another source, such as a textbook or website, 
+	that has been clearly noted with a proper citation in the comments 
+	of my program.
+**/
+
+
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
@@ -8,7 +37,7 @@ import javax.swing.*;
 
 public class SceneFrame extends JComponent implements ActionListener, MouseListener { 
     private JFrame frame;
-    private JButton rotate, clockwise;
+    //private JButton rotate, clockwise;
     private SceneCanvas scene;
     private int width;
     private int height;

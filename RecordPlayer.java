@@ -1,10 +1,32 @@
+/** 
+    This is the RecordPlayer class, which implements the DrawingObject interface.
+    It uses the Circle and Triangle shape classes, as well as the java.awt.geom
+    package to draw the record player. 
+
+    @author Janelle Angela C. Lopez (242682)
+    @author Aldrin Joseph T. Nellas (243215)
+	@version February 15, 2025
+	
+	I have not discussed the Java language code in my program 
+	with anyone other than my instructor or the teaching assistants 
+	assigned to this course.
+
+	I have not used Java language code obtained from another student, 
+	or any other unauthorized source, either modified or unmodified.
+
+	If any Java language code or documentation used in my program 
+	was obtained from another source, such as a textbook or website, 
+	that has been clearly noted with a proper citation in the comments 
+	of my program.
+**/
+
+
 import java.awt.*;
 import java.awt.geom.*;
-import javax.swing.*;
 
-public class RecordPlayer extends JComponent implements DrawingObject{    
+public class RecordPlayer implements DrawingObject{    
 
-    private double rotation, x0, y0, size;
+    private double rotation, x0, y0;
 
 
     public RecordPlayer (double x, double y) {
