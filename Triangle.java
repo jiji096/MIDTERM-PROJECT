@@ -46,44 +46,11 @@ public class Triangle implements DrawingObject {
 
 
         Path2D.Double triangle = new Path2D.Double();
-        // triangle.moveTo(755, 50);
-        // triangle.lineTo(785, 70);
-        // triangle.lineTo(755,90);
         triangle.moveTo(x1,y1);
         triangle.lineTo(x2,y2);
         triangle.lineTo(x3,y3);
         triangle.closePath();
         g2d.setColor(color);
         g2d.fill(triangle);
-
-        // // outside rays
-        // g2d.rotate(Math.toRadians(90), 755, 50);
-        // g2d.translate(75, 35);
-        // g2d.fill(triangle);
-
-        // g2d.rotate(Math.toRadians(90), 755, 50);
-        // g2d.translate(75, 35);
-        // g2d.fill(triangle);
-
-        // g2d.rotate(Math.toRadians(90), 755, 50);
-        // g2d.translate(75, 35);
-        // g2d.fill(triangle);
-        
-        // // inside rays
-        // g2d.rotate(Math.toRadians(45), 755, 50);
-        // g2d.translate(30, 33);
-        // g2d.fill(triangle);
-
-        // g2d.rotate(Math.toRadians(90), 755, 50);
-        // g2d.translate(75, 35);
-        // g2d.fill(triangle);
-
-        // g2d.rotate(Math.toRadians(90), 755, 50);
-        // g2d.translate(75, 35);
-        // g2d.fill(triangle);
-
-        // g2d.rotate(Math.toRadians(90), 755, 50);
-        // g2d.translate(75, 35);
-        // g2d.fill(triangle);
     }
 }

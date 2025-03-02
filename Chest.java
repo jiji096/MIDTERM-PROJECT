@@ -20,22 +20,6 @@ public class Chest implements DrawingObject {
             RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHints(rh);
 
-        Path2D chestBottom = new Path2D.Double();
-        g2d.setColor(new Color(255, 210, 18));
-        chestBottom.moveTo(33, 600);
-        chestBottom.lineTo(30, 555);
-        chestBottom.lineTo(123, 555);
-        chestBottom.lineTo(114+5, 600);
-        g2d.fill(chestBottom);
-
-        Path2D chestBottomInner = new Path2D.Double();
-        g2d.setColor(new Color(255, 180, 18));
-        chestBottomInner.moveTo(38.9, 595.5);
-        chestBottomInner.lineTo(36, 554.7);
-        chestBottomInner.lineTo(117, 554.7);
-        chestBottomInner.lineTo(108.2+5, 595.7);
-        g2d.fill(chestBottomInner);
-
         if (this.state == 0) {
             Path2D chestTop = new Path2D.Double();
             g2d.setColor(new Color(255, 210, 18));
@@ -59,15 +43,40 @@ public class Chest implements DrawingObject {
         }
         else {
             Path2D chestTop = new Path2D.Double();
-            g2d.setColor(Color.RED);
-            chestTop.moveTo(29, 516+30);
-            chestTop.lineTo(37,489+30);
-            chestTop.curveTo(37.7, 485+30, 40, 480.8+30, 46.8, 480.6+30);
-            chestTop.lineTo(100.9, 480.2+30);
-            chestTop.curveTo(108.8, 480.4+30, 113.2, 477.7+30, 115.8, 489+30);
-            chestTop.lineTo(124, 516+30);
+            g2d.setColor(new Color(255, 210, 18));
+            chestTop.moveTo(33.3+20, 558);
+            chestTop.lineTo(18+20,522);
+            chestTop.lineTo(21+20,512);
+            chestTop.lineTo(28+20,512);
+            chestTop.lineTo(31.4+20,516);
+            chestTop.lineTo(78.6,516);
+            chestTop.lineTo(112+10-20,516);
+            chestTop.lineTo(114+10-20,512);
+            chestTop.lineTo(121+10-20,512);
+            chestTop.lineTo(125+10-20,522);
+            chestTop.lineTo(112+10-20,558);
             g2d.fill(chestTop);
+
+            Quadrilateral inner = new Quadrilateral(35.7+20, 554.6, 23.9+20, 523.8, 119.7+10-20, 524.3, 107.9+10-20, 554.6, new Color(255, 190, 15));
+            inner.draw(g2d);
         }
+
+        Path2D chestBottom = new Path2D.Double();
+        g2d.setColor(new Color(255, 210, 18));
+        chestBottom.moveTo(33, 600);
+        chestBottom.lineTo(30, 555);
+        chestBottom.lineTo(123, 555);
+        chestBottom.lineTo(114+5, 600);
+        g2d.fill(chestBottom);
+
+        Path2D chestBottomInner = new Path2D.Double();
+        g2d.setColor(new Color(255, 180, 18));
+        chestBottomInner.moveTo(38.9, 595.5);
+        chestBottomInner.lineTo(36, 554.7);
+        chestBottomInner.lineTo(117, 554.7);
+        chestBottomInner.lineTo(108.2+5, 595.7);
+        g2d.fill(chestBottomInner);
+
 
         Path2D chestLock = new Path2D.Double();
         g2d.setColor(new Color(255, 210, 18));

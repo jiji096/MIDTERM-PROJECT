@@ -1,32 +1,3 @@
-/** 
-    This is the SceneFrame class, which extends JComponent and 
-    implements ActionListener and MouseListener. It is the main GUI
-    class and contains the JFrame for the scene. It includes a setUpGUI
-    method to set up and display the JFrame, as well as event listeners
-    to handle user interaction and animations.
-    
-    This class contains
-    the JFrame for the GUI and has a setUpGUI method that sets up the JFrame.
-
-
-    @author Janelle Angela C. Lopez (242682)
-    @author Aldrin Joseph T. Nellas (243215)
-	@version February 15, 2025
-	
-	I have not discussed the Java language code in my program 
-	with anyone other than my instructor or the teaching assistants 
-	assigned to this course.
-
-	I have not used Java language code obtained from another student, 
-	or any other unauthorized source, either modified or unmodified.
-
-	If any Java language code or documentation used in my program 
-	was obtained from another source, such as a textbook or website, 
-	that has been clearly noted with a proper citation in the comments 
-	of my program.
-**/
-
-
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
@@ -37,15 +8,14 @@ import javax.swing.*;
 
 public class SceneFrame extends JComponent implements ActionListener, MouseListener { 
     private JFrame frame;
-    //private JButton rotate, clockwise;
     private SceneCanvas scene;
     private int width;
     private int height;
     private int state1 = 0;
-    //private int state2 = 0;
+    private int state2 = 0;
     private int day = 0;
     private Timer loopie;
-    private JLabel playClick;
+    private JLabel playClick, chestClick;
     private File music;
     private Clip clip;
 
@@ -55,20 +25,12 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
         width = w;
         height = h;
        
-        // rotate = new JButton("rotate");
-        // clockwise = new JButton("clockwise");
         scene = new SceneCanvas();
         loopie = new Timer(100, this);
     }
 
     public void setUpGUI() throws UnsupportedAudioFileException, IOException, LineUnavailableException{
-        //Container contentPane = frame.getContentPane();
         scene.setPreferredSize(new Dimension(width,height));
-
-        // JPanel buttons = new JPanel();
-        // buttons.setLayout(new GridLayout(1,2));
-        // buttons.add(rotate);
-        // buttons.add(clockwise);
 
         music = new File("audio.AIFF");
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(music);
@@ -80,10 +42,13 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
         playClick.setOpaque(false);
         playClick.addMouseListener(this);
 
-        //contentPane.add(scene, "Center");
-        //contentPane.add(buttons, BorderLayout.SOUTH);
-        //contentPane.add(areaClick, BorderLayout.SOUTH);
+        chestClick = new JLabel();
+        chestClick.setBounds(60, 540, 30, 30);
+        chestClick.setOpaque(true);
+        chestClick.addMouseListener(this);
+
         frame.add(playClick);
+        frame.add(chestClick);
         frame.add(scene);
 
         frame.setTitle("Midterm Project - Lopez - Nellas");
@@ -92,9 +57,6 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
         frame.setFocusable(true);
         frame.setVisible(true);
 
-
-        // rotate.addActionListener(this);
-        // clockwise.addActionListener(this);
         this.addMouseListener(this);
     }
 
@@ -102,7 +64,6 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
     public void mouseClicked(MouseEvent e){
         Chest chest = (Chest) scene.getObject("Chest");
         if (e.getSource() == playClick){
-            chest.changeState();
             state1+=1;
             if (state1%2 == 0) {
                 if(!loopie.isRunning()){
@@ -117,6 +78,10 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
                     clip.stop();
                 }
             }
+        }
+        if (e.getSource() == chestClick){
+            chest.changeState();
+            state2+=1;
         }
     }
 
@@ -196,68 +161,7 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
             stars.turnOpaque();
         }
 
-        // System.out.println("Star: " +stars.getTransparency());
-        // System.out.println("day: " + day);
-
         scene.repaint();
 
     }
 }
-    
-    // public void setUpButtonListener(){
-    //     ActionListener buttonListener = new ActionListener(){
-    //         loopie = new Timer(10, buttonListener);
-
-    //             public void actionPerformed(ActionEvent x){
-
-    //                 JButton b = (JButton) x.getSource();
-    //                 Dolphin d = scene.getDolphin();
-    //                 RecordPlayer r = scene.getRecordPlayer();
-    //                 Fish1 f1 = scene.getFish1();
-    //                 Rainbow rb = scene.getRainbow();
-    //                 Sun sun = scene.getSun();
-        
-    //                 System.out.println("hey loop");
-    
-    //                 if (b == rotate){
-                        
-    //                     // scene.run();
-    //                     d.rotate();
-    //                     sun.rotate();
-    //                     f1.moveLeft();
-    //                     day+=5;
-    //                     if (day > 60 && day < 270) {
-    //                         rb.setTransparency(0);
-    //                     }
-    //                     if (day <= 30 || day >= 270) {
-    //                         state2 = 0;
-    //                     }
-    //                     else {
-    //                         state2 = 1;
-    //                     }
-    //                     if (day == 360) {
-    //                         day = 0;
-    //                     }
-    //                     if (day > 270 && day < 360) {
-    //                         rb.turnOpaque();
-    //                     }
-    //                     else {
-    //                         rb.turnTransparent();
-    //                     }
-    //                     System.out.println(rb.getTransparency());
-    //                     System.out.println("day: " + day);
-    //                 }    
-    
-    //                 // else if (b == clockwise){
-    //                 //     d.rotateCC();
-    //                 // }
-    
-    //                 scene.repaint();
-                    
-    //             }
-            
-    //     }
-    //     rotate.addActionListener(buttonListener);
-    //     clockwise.addActionListener(buttonListener);
-
-    // }
