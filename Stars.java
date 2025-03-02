@@ -1,5 +1,29 @@
+/** 
+    This is the Stars class, which implements the DrawingObject interface. 
+    It uses the Square shape class to draw the stars. Each star's 
+    coordinates are randomly generated and stored in an ArrayList within a 
+    private method, which is called in the constructor. The transparency 
+    methods allow the stars to become more transparent or opaque over time.
+	
+    @author Janelle Angela C. Lopez (242682)
+    @author Aldrin Joseph T. Nellas (243215)
+	@version February 15, 2025
+	
+	I have not discussed the Java language code in my program 
+	with anyone other than my instructor or the teaching assistants 
+	assigned to this course.
+
+	I have not used Java language code obtained from another student, 
+	or any other unauthorized source, either modified or unmodified.
+
+	If any Java language code or documentation used in my program 
+	was obtained from another source, such as a textbook or website, 
+	that has been clearly noted with a proper citation in the comments 
+	of my program.
+**/
+
 import java.awt.*;
-import java.awt.geom.*;
+//import java.awt.geom.*;
 import java.util.*;
 
 public class Stars implements DrawingObject{
@@ -10,19 +34,22 @@ public class Stars implements DrawingObject{
     private int yellow = 20;
     private int white = 60;
     //private int transparency = 200;
-    private double x, y, rotation;
+    //private double x, y, rotation;
     private int transparency;
 
-    public Stars(double x, double y){
-        this.x = x;
-        this.y = y;
-        rotation = 0;
+    //double x, double y 
+    // we dont need to make it take parameters since di naman siya magrrotate
+
+    public Stars(){
+        // this.x = x;
+        // this.y = y;
+        // rotation = 0;
         starsPls();
     }
 
-    public void rotate(){
-        rotation += 30;
-    }
+    // public void rotate(){
+    //     rotation += 30;
+    // }
 
     public void turnTransparent() {
         if (transparency <= 255 && transparency > 20) {
@@ -66,8 +93,8 @@ public class Stars implements DrawingObject{
             RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHints(rh);
 
-        AffineTransform reset = g2d.getTransform();
-        g2d.rotate(Math.toRadians(rotation),x,y);
+        // AffineTransform reset = g2d.getTransform();
+        // g2d.rotate(Math.toRadians(rotation),x,y);
 
 
         for (Square ystars : yellowStars){
@@ -88,7 +115,7 @@ public class Stars implements DrawingObject{
             //g2d.setTransform(reset);
         }
 
-        g2d.setTransform(reset);
+        // g2d.setTransform(reset);
 
 
         // Yellow stars
