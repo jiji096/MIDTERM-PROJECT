@@ -26,12 +26,14 @@
 	of my program.
 **/
 
+
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
 import javax.sound.sampled.*;
 import javax.swing.*;
+
 
 public class SceneFrame extends JComponent implements ActionListener, MouseListener { 
     private JFrame frame;
