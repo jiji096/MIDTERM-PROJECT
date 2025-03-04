@@ -12,7 +12,6 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
     private int width;
     private int height;
     private int state1 = 0;
-    private int state2 = 0;
     private int day = 0;
     private Timer loopie;
     private JLabel playClick, chestClick;
@@ -44,7 +43,7 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
 
         chestClick = new JLabel();
         chestClick.setBounds(60, 540, 30, 30);
-        chestClick.setOpaque(true);
+        chestClick.setOpaque(false);
         chestClick.addMouseListener(this);
 
         frame.add(playClick);
@@ -81,28 +80,7 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
         }
         if (e.getSource() == chestClick){
             chest.changeState();
-            state2+=1;
         }
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e){
-
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e){
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e){
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e){
-
     }
 
 
@@ -164,4 +142,13 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
         scene.repaint();
 
     }
+
+    @Override
+    public void mousePressed(MouseEvent e){}
+    @Override
+    public void mouseReleased(MouseEvent e){}
+    @Override
+    public void mouseEntered(MouseEvent e){}
+    @Override
+    public void mouseExited(MouseEvent e){}
 }

@@ -25,10 +25,9 @@ import java.awt.geom.*;
 
 public class Sun implements DrawingObject{    
 
-    private double rotation, measure;
+    private double rotation;
 
     public Sun () {
-        measure = 30;
     }
 
     public void rotate(){
@@ -46,10 +45,9 @@ public class Sun implements DrawingObject{
         g2d.rotate(Math.toRadians(rotation),400, 600);
 
         Circle araw = new Circle(650,20,100, new Color(255, 210, 18));
-        Circle buwan = new Circle(133,600+(600-100)-100,100, new Color(30, 210, 255));
+        Circle buwan = new Circle(133,1000,100, new Color(30, 210, 255));
         buwan.draw(g2d);
         araw.draw(g2d);
-        //Triangle rays = new Triangle(755, 50, 785, 70, 755, 90, new Color(255, 210, 18));
         Triangle rays = new Triangle(755, 70, 785, 70, 755, 90, new Color(255, 210, 18));
         rays.draw(g2d);
 

@@ -33,7 +33,7 @@ public class SceneCanvas extends JComponent {
         Color blue = new Color(100,149,237);
         Color darkBlue = new Color(	66, 117, 209);
 
-        elements.add(new Sky(400, 0, new Color( 176, 206, 255), 400, 600, new Color (59, 0, 100 )));
+        elements.add(new Sky(400, 0, 400, 600));
         elements.add(new Stars());
         elements.add(new Rainbow());
         elements.add(new Waves());

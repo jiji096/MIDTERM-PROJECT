@@ -24,14 +24,15 @@ import java.awt.*;
 import java.awt.geom.*;
 
 public class Line implements DrawingObject {
-    private double x1, y1, x2, y2, thickness;
+    private double x1, y1, x2, y2;
     private Color color;
 
-    public Line(double x1, double y1, double x2, double y2) {
+    public Line(double x1, double y1, double x2, double y2, Color color) {
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;
         this.y2 = y2;
+        this.color = color;
     }
 
     public void draw(Graphics2D g2d){
@@ -41,7 +42,7 @@ public class Line implements DrawingObject {
         g2d.setRenderingHints(rh);
 
        Line2D.Double line = new Line2D.Double(x1, y1, x2, y2);
-       g2d.setColor(new Color(255, 210, 18));
+       g2d.setColor(color);
        g2d.draw(line);
     }
 }
