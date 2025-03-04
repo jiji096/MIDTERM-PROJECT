@@ -17,6 +17,7 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
     private JLabel playClick, chestClick;
     private File music;
     private Clip clip;
+    private static int counter = 0;
 
     
     public SceneFrame(int w, int h){
@@ -102,6 +103,7 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
         Sun sun = (Sun) scene.getObject("Sun");
         Sky sky = (Sky) scene.getObject("Sky");
         Stars stars = (Stars) scene.getObject("Stars");
+        Waves waves = (Waves) scene.getObject("Waves");
 
         d.rotate();
         d1.rotate();
@@ -111,6 +113,11 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
         f3.move();
         sky.rotate();
         r.rotate();
+
+        counter++;
+        if (counter == 5) counter = 1;
+        waves.move(counter);
+        
         
         day+=5/3;
         //rainbow
