@@ -23,7 +23,6 @@
 **/
 
 import java.awt.*;
-//import java.awt.geom.*;
 import java.util.*;
 
 public class Stars implements DrawingObject{
@@ -33,23 +32,11 @@ public class Stars implements DrawingObject{
 
     private int yellow = 20;
     private int white = 60;
-    //private int transparency = 200;
-    //private double x, y, rotation;
     private int transparency;
 
-    //double x, double y 
-    // we dont need to make it take parameters since di naman siya magrrotate
-
     public Stars(){
-        // this.x = x;
-        // this.y = y;
-        // rotation = 0;
         starsPls();
     }
-
-    // public void rotate(){
-    //     rotation += 30;
-    // }
 
     public void turnTransparent() {
         if (transparency <= 255 && transparency > 20) {
@@ -93,53 +80,16 @@ public class Stars implements DrawingObject{
             RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHints(rh);
 
-        // AffineTransform reset = g2d.getTransform();
-        // g2d.rotate(Math.toRadians(rotation),x,y);
-
 
         for (Square ystars : yellowStars){
-            //AffineTransform reset = g2d.getTransform();
-            // g2d.translate(x,y);
-            //g2d.rotate(rotation);
             g2d.setColor(new Color(255, 255, 0, transparency));
             ystars.draw(g2d);
-            //g2d.setTransform(reset);
         }
 
         for (Square wstars : whiteStars){
-            //AffineTransform reset = g2d.getTransform();
-            // g2d.translate();
-            //g2d.rotate(rotation);
             g2d.setColor(new Color(255, 255, 255, transparency));
             wstars.draw(g2d);
-            //g2d.setTransform(reset);
         }
-
-        // g2d.setTransform(reset);
-
-
-        // Yellow stars
-        // yellowStars.add(new Square(80, 30, 15, Color.YELLOW));
-        // yellowStars.add(new Square(180, 200, 15, Color.YELLOW));
-        // yellowStars.add(new Square(400, 300, 15, Color.YELLOW));
-        
-        // white stars
-        // whiteStars.add(new Square(300, 100, 10, Color.WHITE));
-        // whiteStars.add(new Square(150, 50, 10, Color.WHITE));
-
-       
-        // ystar1.draw(g2d);
-        // ystar2.draw(g2d);
-        // ystar3.draw(g2d);
-
-        // wstar1.draw(g2d);
-        // wstar2.draw(g2d);
-
-        // for (int i = 0; i < 3; i++){
-        //     g2d.translate(10, -60);
-        //     star2.draw(g2d);
-        // }
-
     }
 
 }
