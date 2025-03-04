@@ -23,8 +23,17 @@ import java.awt.*;
 import java.awt.geom.*;
 
 public class Waves implements DrawingObject{    
+    private double x, y, rotation;
+
     public Waves(){
+        // this.x = x;
+        // this.y = y;
+        // rotation = 0;
     }    
+    public void rotate() {
+        rotation += 5;
+    }
+
     
     public void draw(Graphics2D g2d){
         RenderingHints rh = new RenderingHints(
