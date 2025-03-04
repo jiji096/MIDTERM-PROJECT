@@ -26,12 +26,12 @@ import java.awt.geom.*;
 
 public class RecordPlayer implements DrawingObject{    
 
-    private double rotation, x0, y0;
+    private double rotation, x, y;
 
 
     public RecordPlayer (double x, double y) {
-        x0 = x;
-        y0 = y;
+        this.x = x;
+        this.y = y;
         rotation = 0;
     }
 
@@ -46,7 +46,7 @@ public class RecordPlayer implements DrawingObject{
         g2d.setRenderingHints(rh);
 
         AffineTransform reset = g2d.getTransform();
-        g2d.rotate(Math.toRadians(rotation),x0,y0);
+        g2d.rotate(Math.toRadians(rotation),x,y);
 
         Circle outer = new Circle(645,460,125, Color.BLACK);
         outer.draw(g2d);

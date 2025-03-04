@@ -23,8 +23,21 @@ import java.awt.*;
 import java.awt.geom.*;
 
 public class Waves implements DrawingObject{    
+    private double x1, y1, x2, y2;
+
     public Waves(){
+        this.x1 = 0;
+        this.y1 = 0;
     }    
+    public void move(int state) {
+        state+=1;
+        
+        if (state == 1) y1-=10;
+        else if (state == 2) x1+=10;
+        else if (state == 3) y1+=10;
+        else if (state == 4) x1-=10;
+
+    }
     
     public void draw(Graphics2D g2d){
         RenderingHints rh = new RenderingHints(
