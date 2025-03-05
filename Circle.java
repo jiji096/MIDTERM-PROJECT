@@ -52,10 +52,6 @@ public class Circle implements DrawingObject{
 	**/
     @Override
     public void draw(Graphics2D g2d){
-        RenderingHints rh = new RenderingHints(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setRenderingHints(rh);
 
         Ellipse2D.Double circle = new Ellipse2D.Double(x,y,size,size);
         g2d.setColor(color);

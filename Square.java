@@ -49,10 +49,6 @@ public class Square implements DrawingObject {
         Draws the Square using the Graphics2D object.
 	**/
     public void draw(Graphics2D g2d){
-        RenderingHints rh = new RenderingHints(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setRenderingHints(rh);
 
         Rectangle2D.Double square = new Rectangle2D.Double(x, y, size, size);
         g2d.fill(square);

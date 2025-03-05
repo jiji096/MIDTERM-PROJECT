@@ -52,10 +52,6 @@ public class RecordPlayer implements DrawingObject{
         using the Graphics2D object.
 	**/
     public void draw(Graphics2D g2d){
-        RenderingHints rh = new RenderingHints(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setRenderingHints(rh);
 
         AffineTransform reset = g2d.getTransform();
         g2d.rotate(Math.toRadians(rotation),x,y);

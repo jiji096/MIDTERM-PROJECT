@@ -51,12 +51,7 @@ public class Fish2 implements DrawingObject {
         Draws the Fish using the Graphics2D object.
 	**/
     public void draw(Graphics2D g2d) {
-        RenderingHints rh = new RenderingHints(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setRenderingHints(rh);
 
-        //body
         Path2D.Double outline = new Path2D.Double();
         outline.moveTo(x+519.6,535.1);
         outline.curveTo(x+520.7,528.7,x+533.7,513.7,x+561.9,531.4);
@@ -64,14 +59,12 @@ public class Fish2 implements DrawingObject {
         outline.curveTo(x+574.2,553.27,x+568.5,547.2,x+566.5,541.65);
         outline.curveTo(x+562.5,538.9,x+524.6,555.9,x+519.6,535.1);
 
-        //dorsal
         Path2D.Double dorsal = new Path2D.Double();
         dorsal.moveTo(x+534.8,524.3);
         dorsal.curveTo(x+532.7,511.15,x+542.3,517.46,x+546,524.25);
         dorsal.curveTo(x+560.8,517.7,x+566.1,522.8,x+563.7,532.6);
         dorsal.curveTo(x+549.8,523.8,x+549,524,x+534.8,524.3);
 
-        //bottom
         Path2D.Double under = new Path2D.Double();
         under.moveTo(x+535.1,545.8);
         under.curveTo(x+543.5,562.4,x+549.9,548.86,x+542.3,544.9);

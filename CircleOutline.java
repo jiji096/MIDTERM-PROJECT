@@ -50,10 +50,6 @@ public class CircleOutline implements DrawingObject{
         Draws the Circle outline using the Graphics2D object.
 	**/
     public void draw(Graphics2D g2d){
-        RenderingHints rh = new RenderingHints(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setRenderingHints(rh);
 
         Ellipse2D.Double bilog = new Ellipse2D.Double(x,y,size,size);
         g2d.setColor(color);
