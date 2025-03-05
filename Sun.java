@@ -61,8 +61,9 @@ public class Sun implements DrawingObject{
         Triangle rays = new Triangle(755, 70, 785, 70, 755, 90, new Color(255, 210, 18));
         rays.draw(g2d);
 
-
-        // outside rays
+    /**
+        Draws the rays of the sun.
+	**/
         for (int i = 0; i < 3; i++) {
             g2d.rotate(Math.toRadians(90), 755, 50);
             g2d.translate(75, 35);
@@ -72,7 +73,6 @@ public class Sun implements DrawingObject{
         g2d.rotate(Math.toRadians(45), 755, 50);
         g2d.translate(30, 33);
         rays.draw(g2d);
-
 
         for (int i = 0; i < 3; i++) {
             g2d.rotate(Math.toRadians(90), 755, 50);

@@ -61,42 +61,45 @@ public class Chest implements DrawingObject {
             RenderingHints.KEY_ANTIALIASING,
             RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHints(rh);
-
+        
+        /**
+            If-Else checks state which determines whether to render open chest or not.
+	    **/
         if (this.state == 0) {
             Path2D chestTop = new Path2D.Double();
             g2d.setColor(new Color(	243, 156, 5));
-            chestTop.moveTo(28, 554+3);
+            chestTop.moveTo(28, 557);
             chestTop.lineTo(33.6, 533.7);
             chestTop.curveTo(38.3, 517.55, 39.9, 516.8, 53.2, 517);
             chestTop.lineTo(95.6, 516.7);
-            chestTop.curveTo(95.6+13.3+3, 517.55, 95.6+13.3+1.6+3, 516.8, 95.6+13.3+1.6+4.7+3, 533.7);
-            chestTop.lineTo(95.6+13.3+1.6+4.7+5.6+3, 554+3);
+            chestTop.curveTo(111.9, 517.55, 113.5, 516.8, 118.2, 533.7);
+            chestTop.lineTo(123.8, 557);
             g2d.fill(chestTop);
 
             Path2D innerChestTop = new Path2D.Double();
             g2d.setColor(new Color(152, 86, 0));
-            innerChestTop.moveTo(28+12, 554+3-5);
-            innerChestTop.lineTo(33.6+10, 533.7+5);
-            innerChestTop.curveTo(38.3+10, 517.55+5, 39.9+10, 516.8+5, 53.2+10, 517+5);
-            innerChestTop.lineTo(95.6-10, 516.7+5);
-            innerChestTop.curveTo(95.6+13.3+3-10, 517.55+5, 95.6+13.3+1.6+3-10, 516.8+5, 95.6+13.3+1.6+4.7+3-10, 533.7+5);
-            innerChestTop.lineTo(95.6+13.3+1.6+4.7+5.6+3-12, 554+3-5);
+            innerChestTop.moveTo(40, 552);
+            innerChestTop.lineTo(43.6, 538.7);
+            innerChestTop.curveTo(48.3, 522.55, 49.9, 521.8, 63.2, 522);
+            innerChestTop.lineTo(85.6, 521.7);
+            innerChestTop.curveTo(101.9, 522.5, 103.5, 521.8, 108.2, 538.7);
+            innerChestTop.lineTo(111.8, 552);
             g2d.fill(innerChestTop);
         }
         else {
             Path2D chestTop = new Path2D.Double();
             g2d.setColor(new Color(	243, 156, 5));
-            chestTop.moveTo(33.3+20, 558);
-            chestTop.lineTo(18+20,522);
-            chestTop.lineTo(21+20,512);
-            chestTop.lineTo(28+20,512);
-            chestTop.lineTo(31.4+20,516);
+            chestTop.moveTo(55.3, 558);
+            chestTop.lineTo(38,522);
+            chestTop.lineTo(41,512);
+            chestTop.lineTo(48,512);
+            chestTop.lineTo(51.4,516);
             chestTop.lineTo(78.6,516);
-            chestTop.lineTo(112+10-20,516);
-            chestTop.lineTo(114+10-20,512);
-            chestTop.lineTo(121+10-20,512);
-            chestTop.lineTo(125+10-20,522);
-            chestTop.lineTo(112+10-20,558);
+            chestTop.lineTo(102,516);
+            chestTop.lineTo(104,512);
+            chestTop.lineTo(111,512);
+            chestTop.lineTo(115,522);
+            chestTop.lineTo(102,558);
             g2d.fill(chestTop);
 
             Quadrilateral inner = new Quadrilateral(35.7+20, 554.6, 23.9+20, 523.8, 119.7+10-20, 524.3, 107.9+10-20, 554.6, new Color(152, 71, 0));
@@ -138,7 +141,7 @@ public class Chest implements DrawingObject {
         chestBottom.moveTo(33, 600);
         chestBottom.lineTo(30, 555);
         chestBottom.lineTo(123, 555);
-        chestBottom.lineTo(114+5, 600);
+        chestBottom.lineTo(119, 600);
         g2d.fill(chestBottom);
 
         Path2D chestBottomInner = new Path2D.Double();
@@ -146,7 +149,7 @@ public class Chest implements DrawingObject {
         chestBottomInner.moveTo(38.9, 595.5);
         chestBottomInner.lineTo(36, 554.7);
         chestBottomInner.lineTo(117, 554.7);
-        chestBottomInner.lineTo(108.2+5, 595.7);
+        chestBottomInner.lineTo(113.2, 595.7);
         g2d.fill(chestBottomInner);
 
         Line lines1 = new Line(52,565.3,103,565.3, new Color(91, 52, 0));

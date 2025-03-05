@@ -41,12 +41,11 @@ public class Ocean implements DrawingObject {
         Draws the elements of the Ocean using the Graphics2D object.
     **/
     public void draw(Graphics2D g2d){
-        RenderingHints rh = new RenderingHints(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setRenderingHints(rh);
+        // RenderingHints rh = new RenderingHints(
+        //     RenderingHints.KEY_ANTIALIASING,
+        //     RenderingHints.VALUE_ANTIALIAS_ON);
+        // g2d.setRenderingHints(rh);
 
-        // rock 1
         Path2D.Double rock1 = new Path2D.Double();
         rock1.moveTo(228.3,600);
         rock1.curveTo(225.7,584.4,244.8,584.8,245.6,585);
@@ -88,7 +87,6 @@ public class Ocean implements DrawingObject {
         g2d.setColor(new Color(86, 97, 118));
         g2d.fill(highlight3);
 
-        // rock 2
         Path2D.Double rock2= new Path2D.Double();
         rock2.moveTo(498.5,600.4);
         rock2.curveTo(527.1,585.5,526,584.7,518,602);
@@ -156,7 +154,6 @@ public class Ocean implements DrawingObject {
         rightBubbles.add(new Circle(487,522,4,Color.WHITE));
         rightBubbles.add(new Circle(482,572,4,Color.WHITE));
         rightBubbles.add(new Circle(493,562,6,Color.WHITE));
-
 
         for (Circle bubbles : rightBubbles){
             bubbles.draw(g2d);
