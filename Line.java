@@ -50,11 +50,6 @@ public class Line implements DrawingObject {
         Draws the Line using the Graphics2D object.
 	**/
     public void draw(Graphics2D g2d){
-        RenderingHints rh = new RenderingHints(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setRenderingHints(rh);
-
        Line2D.Double line = new Line2D.Double(x1, y1, x2, y2);
        g2d.setColor(color);
        g2d.draw(line);

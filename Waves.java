@@ -75,10 +75,6 @@ public class Waves implements DrawingObject{
         Draws the Waves using the Graphics2D object.
 	**/
     public void draw(Graphics2D g2d){
-        RenderingHints rh = new RenderingHints(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setRenderingHints(rh);
 
         Path2D.Double fourthWave = new Path2D.Double();
         fourthWave.moveTo(0, 420 + y4);
@@ -129,7 +125,6 @@ public class Waves implements DrawingObject{
         firstWave.curveTo(760, 488.8 + y1, 800, 447 + y1, 890, 453 + y1);
         firstWave.lineTo(890, 600 + y1);
         firstWave.lineTo(0, 600 + y1);
-
 
         g2d.setColor(new Color(68, 211, 255));
         g2d.draw(firstWave);

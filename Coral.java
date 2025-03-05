@@ -47,10 +47,6 @@ public class Coral implements DrawingObject {
         Draws the Coral using the Graphics2D object.
 	**/
     public void draw(Graphics2D g2d){
-        RenderingHints rh = new RenderingHints(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setRenderingHints(rh);
 
         Path2D.Double back = new Path2D.Double();
         back.moveTo(x+177.8,598.9);

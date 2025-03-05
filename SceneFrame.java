@@ -132,7 +132,7 @@ public class SceneFrame extends JComponent implements ActionListener, MouseListe
         d.rotate();
         d1.rotate();
         sun.rotate();
-        f1.moveLeft();
+        f1.move();
         f2.move();
         f3.move();
         sky.rotate();

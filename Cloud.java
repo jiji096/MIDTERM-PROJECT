@@ -29,6 +29,7 @@ import java.awt.*;
 public class Cloud implements DrawingObject {
     private double x;
     private double y;
+    private double x2 = 0;
     private double size;
     private Color color;
 
@@ -46,14 +47,11 @@ public class Cloud implements DrawingObject {
         this.color = color;
     }
 
+
     /**
         Draws the Cloud with Circle objects using the Graphics2D object.
 	**/
     public void draw(Graphics2D g2d){
-        RenderingHints rh = new RenderingHints(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setRenderingHints(rh);
 
         Circle cloud1 = new Circle(x,y,size,color);
         Circle cloud2 = new Circle(x+size*0.43,y-size*0.21,size*1.29,color);

@@ -40,12 +40,14 @@ public class SceneCanvas extends JComponent {
         elements.add(new Dolphin(400,1100));
         elements.add(new smallDolphin(200, 800));
         elements.add(new Sun());
+
         elements.add(new Cloud(105, 70, 70, darkBlue));
         elements.add(new Cloud(100,65,70,blue));
         elements.add(new Cloud(5, 80, 70, darkBlue));
         elements.add(new Cloud(0,75,70,blue));
         elements.add(new Cloud(525, 85, 70, darkBlue));
         elements.add(new Cloud(520,80,70,blue));
+
         elements.add(new Fish1());
         elements.add(new Fish2());
         elements.add(new Fish3());
