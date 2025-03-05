@@ -41,10 +41,6 @@ public class Ocean implements DrawingObject {
         Draws the elements of the Ocean using the Graphics2D object.
     **/
     public void draw(Graphics2D g2d){
-        // RenderingHints rh = new RenderingHints(
-        //     RenderingHints.KEY_ANTIALIASING,
-        //     RenderingHints.VALUE_ANTIALIAS_ON);
-        // g2d.setRenderingHints(rh);
 
         Path2D.Double rock1 = new Path2D.Double();
         rock1.moveTo(228.3,600);

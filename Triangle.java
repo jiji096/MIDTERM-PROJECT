@@ -55,11 +55,6 @@ public class Triangle implements DrawingObject {
         Draws the Triangle using the Graphics2D object.
 	**/
     public void draw(Graphics2D g2d){
-        RenderingHints rh = new RenderingHints(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setRenderingHints(rh);
-
 
         Path2D.Double triangle = new Path2D.Double();
         triangle.moveTo(x1,y1);

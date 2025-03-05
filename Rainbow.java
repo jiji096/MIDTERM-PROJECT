@@ -71,10 +71,6 @@ public class Rainbow implements DrawingObject {
         Draws the Rainbow with CircleOutline objects using the Graphics2D object.
 	**/
     public void draw(Graphics2D g2d){
-        RenderingHints rh = new RenderingHints(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setRenderingHints(rh);
 
         CircleOutline red = new CircleOutline(100,120,600,new Color(248, 175, 175, transparency));
         CircleOutline orange = new CircleOutline(120,140,560,new Color(255, 198, 138, transparency));

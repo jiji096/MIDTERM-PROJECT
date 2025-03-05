@@ -57,14 +57,11 @@ public class Chest implements DrawingObject {
         using the Graphics2D object.
 	**/
     public void draw(Graphics2D g2d) {
-        RenderingHints rh = new RenderingHints(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setRenderingHints(rh);
-        
         /**
             If-Else checks state which determines whether to render open chest or not.
 	    **/
+
+
         if (this.state == 0) {
             Path2D chestTop = new Path2D.Double();
             g2d.setColor(new Color(	243, 156, 5));

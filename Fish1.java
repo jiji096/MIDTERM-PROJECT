@@ -40,7 +40,7 @@ public class Fish1 implements DrawingObject {
         If the x-coordinate becomes greater than the size of the frame,
         x decreases to make the fish appear again on the other side of the frame.
 	**/
-    public void moveLeft() {
+    public void move() {
         x+=10;
         if (x > 800) {
             x = -200;
@@ -51,10 +51,6 @@ public class Fish1 implements DrawingObject {
         Draws the Fish using the Graphics2D object.
 	**/
     public void draw(Graphics2D g2d) {
-        RenderingHints rh = new RenderingHints(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setRenderingHints(rh);
 
         Path2D.Double body = new Path2D.Double();
         body.moveTo(x+208.4, 520);

@@ -90,12 +90,6 @@ public class Stars implements DrawingObject{
         draw the stars using the Graphics2D object.
 	**/
     public void draw(Graphics2D g2d){
-        RenderingHints rh = new RenderingHints(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setRenderingHints(rh);
-
-
         for (Square ystars : yellowStars){
             g2d.setColor(new Color(255, 255, 0, transparency));
             ystars.draw(g2d);
