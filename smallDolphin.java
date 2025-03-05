@@ -24,20 +24,33 @@
 import java.awt.*;
 import java.awt.geom.*;
 
+/**
+    Initializes fields for x and y coordinates, and rotation.
+**/
 public class smallDolphin implements DrawingObject {
     private double x, y, rotation;
 
+    /**
+        Constructs the dolphin with the given x and y coordinates for its rotation.
+        @param x      The x-coordinate of the dolphin's anchor point.
+        @param y      The y-coordinate of the dolphin's anchor point.
+    **/
     public smallDolphin (double x, double y) {
         this.x = -x;
         this.y = y;
         rotation = 0;
     }
 
+    /**
+        Increases the value of the rotation.
+    **/
     public void rotate(){
         rotation +=6;
     }
 
-
+    /**
+        Draws the Dolphin using the Graphics2D object.
+	**/
     public void draw(Graphics2D g2d) {
         AffineTransform reset = g2d.getTransform();
        

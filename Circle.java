@@ -24,12 +24,22 @@
 import java.awt.*;
 import java.awt.geom.*;
 
+/**
+    Initializes fields for x and y coordinates, size, and color.
+**/
 public class Circle implements DrawingObject{
     private double x;
     private double y;
     private double size;
     private Color color;
 
+    /**
+        Constructs circle with the given position, size, and color.
+        @param x      The x-coordinate of the circle.
+        @param y      The y-coordinate of the circle.
+        @param size   The size or diameter of the circle.
+        @param color  The color of the circle.
+    **/
     public Circle(double x, double y, double size, Color color){
         this.x = x;
         this.y = y;
@@ -37,7 +47,9 @@ public class Circle implements DrawingObject{
         this.color = color;
     }
 
-
+    /**
+        Draws the Circle using the Graphics2D object.
+	**/
     @Override
     public void draw(Graphics2D g2d){
         RenderingHints rh = new RenderingHints(
@@ -48,6 +60,5 @@ public class Circle implements DrawingObject{
         Ellipse2D.Double circle = new Ellipse2D.Double(x,y,size,size);
         g2d.setColor(color);
         g2d.fill(circle);
-
     }
 }

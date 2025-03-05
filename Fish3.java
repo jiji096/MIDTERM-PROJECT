@@ -23,19 +23,33 @@
 import java.awt.*;
 import java.awt.geom.*;
 
+/**
+    Initializes value for the x-coordinate.
+**/
 public class Fish3 implements DrawingObject {
     private double x = 0;
 
+    /**
+        Constructor for the Fish2 class.
+	**/
     public Fish3() {
     }
 
+    /**
+        Decreases the x-coordinate to make the fish move left.
+        If the x-coordinate becomes less than the size of the frame,
+        x decreases to make the fish appear again on the other side of the frame.
+	**/
     public void move() {
         x -= 10;
         if (x < -800) {
-            x = +208.4;
+            x = +200;
         }
     }
 
+    /**
+        Draws the Fish using the Graphics2D object.
+	**/
     public void draw(Graphics2D g2d) {
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,

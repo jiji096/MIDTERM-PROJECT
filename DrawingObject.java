@@ -19,7 +19,6 @@
 	of my program.
 **/
 
-
 import java.awt.*;
 
 public interface DrawingObject {

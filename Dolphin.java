@@ -2,7 +2,7 @@
     This is the Dolphin class, which implements the DrawingObject interface 
     and uses the java.awt.geom package to draw each curve of the dolphin. It
     accepts x and y coordinates as parameters to set the dolphin's anchor point
-    for rotation and includes a rotate method that controls its rotation speed.
+    for rotation and› includes a rotate method that controls its rotation speed.
 	
     @author Janelle Angela C. Lopez (242682)
     @author Aldrin Joseph T. Nellas (243215)
@@ -24,21 +24,33 @@
 import java.awt.*;
 import java.awt.geom.*;
 
+/**
+    Initializes fields for x and y coordinates, and rotation.
+**/
 public class Dolphin implements DrawingObject {
     private double x, y, rotation;
 
+    /**
+        Constructs the dolphin with the given x and y coordinates for its rotation.
+        @param x      The x-coordinate of the dolphin's anchor point.
+        @param y      The y-coordinate of the dolphin's anchor point.
+    **/
     public Dolphin (double x, double y) {
         this.x = x;
         this.y = y;
         rotation = 0;
     }
 
+    /**
+        Increases the value of the rotation.
+    **/
     public void rotate(){
         rotation +=9;
     }
 
-
-
+    /**
+        Draws the Dolphin using the Graphics2D object.
+	**/
     public void draw(Graphics2D g2d) {
         AffineTransform reset = g2d.getTransform();
        

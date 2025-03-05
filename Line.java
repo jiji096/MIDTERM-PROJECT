@@ -23,10 +23,21 @@
 import java.awt.*;
 import java.awt.geom.*;
 
+/**
+    Initializes fields for multiple x and y coordinates, and color.
+**/
 public class Line implements DrawingObject {
     private double x1, y1, x2, y2;
     private Color color;
 
+    /**
+        Constructs line with the given x and y coordinates, and color.
+        @param x1      The x-coordinate of the starting point of the line.
+        @param y1      The y-coordinate of the starting point of the line.
+        @param x2      The x-coordinate of the end point of the line.
+        @param y2      The y-coordinate of the end point of the line.
+        @param color   The color of the line.
+    **/
     public Line(double x1, double y1, double x2, double y2, Color color) {
         this.x1 = x1;
         this.y1 = y1;
@@ -35,6 +46,9 @@ public class Line implements DrawingObject {
         this.color = color;
     }
 
+    /**
+        Draws the Line using the Graphics2D object.
+	**/
     public void draw(Graphics2D g2d){
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,

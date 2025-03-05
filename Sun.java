@@ -23,18 +23,28 @@
 import java.awt.*;
 import java.awt.geom.*;
 
+/**
+    Initializes field for rotation.
+**/
 public class Sun implements DrawingObject{    
-
     private double rotation;
 
+    /**
+        Constructor for the Sun class.
+    **/
     public Sun () {
     }
 
+    /**
+        Increases the value of the rotation.
+    **/
     public void rotate(){
         rotation += 5/3;
     }
 
-    
+    /**
+        Draws the Sun and Moon using the Graphics2D object.
+	**/
     public void draw(Graphics2D g2d){
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,
@@ -45,7 +55,7 @@ public class Sun implements DrawingObject{
         g2d.rotate(Math.toRadians(rotation),400, 600);
 
         Circle araw = new Circle(650,20,100, new Color(255, 210, 18));
-        Circle buwan = new Circle(133,1000,100, new Color(30, 210, 255));
+        Circle buwan = new Circle(133,1000,100, new Color(188, 199, 230));
         buwan.draw(g2d);
         araw.draw(g2d);
         Triangle rays = new Triangle(755, 70, 785, 70, 755, 90, new Color(255, 210, 18));

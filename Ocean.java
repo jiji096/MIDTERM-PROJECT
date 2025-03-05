@@ -24,16 +24,22 @@ import java.awt.*;
 import java.awt.geom.*;
 import java.util.*;
 
-
+/**
+    Initializes ArrayLists storing circle objects for the bubbles.
+**/
 public class Ocean implements DrawingObject {
     private ArrayList<Circle> leftBubbles = new ArrayList<Circle>();
     private ArrayList<Circle> rightBubbles = new ArrayList<Circle>();
 
-
+    /**
+        Constructor for the Ocean class.
+    **/
     public Ocean(){
         
     }
-
+    /**
+        Draws the elements of the Ocean using the Graphics2D object.
+    **/
     public void draw(Graphics2D g2d){
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,
@@ -82,7 +88,6 @@ public class Ocean implements DrawingObject {
         g2d.setColor(new Color(86, 97, 118));
         g2d.fill(highlight3);
 
-
         // rock 2
         Path2D.Double rock2= new Path2D.Double();
         rock2.moveTo(498.5,600.4);
@@ -128,8 +133,6 @@ public class Ocean implements DrawingObject {
         g2d.setColor(new Color(107, 156, 119));
         g2d.fill(moss3);
 
-
-        // bubbles left side 
         leftBubbles.add(new Circle(125,499,10,Color.WHITE));
         leftBubbles.add(new Circle(138,505,10,Color.WHITE));
         leftBubbles.add(new Circle(122,519,9,Color.WHITE));

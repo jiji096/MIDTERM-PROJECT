@@ -23,12 +23,22 @@
 
 import java.awt.*;
 
+/**
+    Initializes fields for x and y coordinates, size, and color.
+**/
 public class Cloud implements DrawingObject {
     private double x;
     private double y;
     private double size;
     private Color color;
 
+    /**
+        Constructs the cloud with the given position, size, and color.
+        @param x      The x-coordinate of the first circle.
+        @param y      The y-coordinate of the first circle.
+        @param size   The size or diameter of the first circle.
+        @param color  The color of the circles.
+    **/
     public Cloud (double x, double y, double size, Color color){
         this.x = x;
         this.y = y;
@@ -36,6 +46,9 @@ public class Cloud implements DrawingObject {
         this.color = color;
     }
 
+    /**
+        Draws the Cloud with Circle objects using the Graphics2D object.
+	**/
     public void draw(Graphics2D g2d){
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,
@@ -53,7 +66,5 @@ public class Cloud implements DrawingObject {
         cloud3.draw(g2d);
         cloud4.draw(g2d);
         cloud5.draw(g2d);
-
-
     }
 }

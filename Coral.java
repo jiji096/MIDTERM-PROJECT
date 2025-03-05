@@ -24,16 +24,28 @@
 import java.awt.*;
 import java.awt.geom.*;
 
+/**
+    Initializes fields for the x-coordinate and colors.
+**/
 public class Coral implements DrawingObject {
     private double x;
     private Color color1, color2;
 
+    /**
+        Constructs the coral with the given x-coordinates and colors.
+        @param x      The x-coordinate of the coral.
+        @param color1  The main color of the coral.
+        @param color2  The secondary color of the coral.
+    **/
     public Coral(double x, Color color1, Color color2){
         this.x = x;
         this.color1 = color1;
         this.color2 = color2;
     }
 
+    /**
+        Draws the Coral using the Graphics2D object.
+	**/
     public void draw(Graphics2D g2d){
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,
