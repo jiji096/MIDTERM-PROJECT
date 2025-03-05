@@ -24,19 +24,31 @@
 import java.awt.*;
 import java.awt.geom.*;
 
+/**
+    Initializes fields for x and y coordinates, size, and color.
+**/
 public class CircleOutline implements DrawingObject{
     private double x;
     private double y;
     private double size;
     private Color color;
 
+    /**
+        Constructs circle outline with the given position, size, and color.
+        @param x      The x-coordinate of the circle.
+        @param y      The y-coordinate of the circle.
+        @param size   The size or diameter of the circle.
+        @param color  The color of the circle.
+    **/
     public CircleOutline(double x, double y, double size, Color color){
         this.x = x;
         this.y = y;
         this.size = size;
         this.color = color;
     }
-
+    /**
+        Draws the Circle outline using the Graphics2D object.
+	**/
     public void draw(Graphics2D g2d){
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,

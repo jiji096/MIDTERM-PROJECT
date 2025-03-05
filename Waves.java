@@ -22,15 +22,27 @@
 import java.awt.*;
 import java.awt.geom.*;
 
+/**
+    Initializes fields for multiple y coordinates.
+**/
 public class Waves implements DrawingObject{    
     private double y1, y2, y3, y4;
 
+    /**
+        Constructor initializes values for multiple y coordinates.
+    **/
     public Waves(){
         this.y1 = 0;
         this.y2 = 0;
         this.y3 = 0;
         this.y4 = 0;
     }    
+
+    /**
+        Toggles the state of the wave between four states, one for
+        each wave. The state determines the wave's movement and 
+        increase in y value.
+	**/
     public void move(int state) {
         
         if (state == 1) {
@@ -58,7 +70,10 @@ public class Waves implements DrawingObject{
             y4 -= 5;
         }
     }
-    
+
+    /**
+        Draws the Waves using the Graphics2D object.
+	**/
     public void draw(Graphics2D g2d){
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,

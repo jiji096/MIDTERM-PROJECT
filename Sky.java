@@ -25,6 +25,9 @@
 import java.awt.*;
 import java.awt.geom.*;
 
+/**
+    Initializes fields for multiple x and y coordinates, and rotation.
+**/
 public class Sky implements DrawingObject{
     private float x1;
     private float y1;
@@ -32,6 +35,13 @@ public class Sky implements DrawingObject{
     private float y2;
     private double rotation;
 
+    /**
+        Constructs the Sky with the given x and y coordinates for it's gradient.
+        @param x1  The x-coordinate of the starting point of the gradient.
+        @param y1  The y-coordinate of the starting point of the gradient.
+        @param x2  The x-coordinate of the end point of the gradient.
+        @param y2  The y-coordinate of the end point of the gradient.
+    **/
     public Sky(int x1, int y1, int x2, int y2){
         this.x1 = x1;
         this.y1 = y1;
@@ -40,10 +50,16 @@ public class Sky implements DrawingObject{
         rotation = 30;
     }    
 
+    /**
+        Increases the value of rotation.
+    **/
     public void rotate() {
         rotation+=5/3;
     }
 
+    /**
+        Draws the Sky using the Graphics2D object.
+	**/
     public void draw(Graphics2D g2d){
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,

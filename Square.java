@@ -24,18 +24,30 @@
 import java.awt.*;
 import java.awt.geom.*;
 
-
+/**
+    Initializes fields for x and y coordinates, size, and color.
+**/
 public class Square implements DrawingObject {
     private double x;
     private double y;
     private double size;
 
+    /**
+        Constructs square with the given position, size, and color.
+        @param x      The x-coordinate of the square.
+        @param y      The y-coordinate of the square.
+        @param size   The size or diameter of the square.
+        @param color  The color of the square.
+    **/
     public Square(double x, double y, double size){
         this.x = x;
         this.y = y;
         this.size = size;
     }
 
+    /**
+        Draws the Square using the Graphics2D object.
+	**/
     public void draw(Graphics2D g2d){
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,

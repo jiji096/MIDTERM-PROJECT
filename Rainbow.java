@@ -24,11 +24,21 @@
 
 import java.awt.*;
 
+/**
+    Initializes values for transparency.
+**/
 public class Rainbow implements DrawingObject {
     private int transparency = 120;
+
+    /**
+        Constructor for the Rainbow class.
+    **/
     public Rainbow(){
     }
 
+    /**
+        Adjusts the transparency of the Rainbow.
+    **/
     public void turnTransparent() {
         if (transparency <= 255 && transparency > 20) {
             transparency-=6;
@@ -36,6 +46,9 @@ public class Rainbow implements DrawingObject {
         else transparency = 0;
     }
 
+    /**
+        Turns the rainbow opaque.
+    **/
     public void turnOpaque() {
         if (transparency+6 - 255 > 0) {
             transparency = 255;
@@ -43,13 +56,17 @@ public class Rainbow implements DrawingObject {
         else transparency+=6;
     }
 
+    /**
+        Sets the value of the transparency based on the given value.
+        @param x value for transparency of the circle objects.
+    **/
     public void setTransparency(int x) {
         transparency = x;
     }
-    public int getTransparency() {
-        return transparency;
-    }
 
+    /**
+        Draws the Rainbow with CircleOutline objects using the Graphics2D object.
+	**/
     public void draw(Graphics2D g2d){
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,

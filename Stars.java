@@ -25,6 +25,10 @@
 import java.awt.*;
 import java.util.*;
 
+/**
+    Initializes ArrayLists for storing the randomly generated stars and 
+    fields for the amount of stars and the transparency.
+**/
 public class Stars implements DrawingObject{
     private ArrayList<Square> yellowStars = new ArrayList<Square>();
     private ArrayList<Square> whiteStars = new ArrayList<Square>();
@@ -38,6 +42,9 @@ public class Stars implements DrawingObject{
         starsPls();
     }
 
+    /**
+        Adjusts the transparency of the Stars.
+    **/
     public void turnTransparent() {
         if (transparency <= 255 && transparency > 20) {
             transparency-=10;
@@ -45,6 +52,9 @@ public class Stars implements DrawingObject{
         else transparency = 0;
     }
 
+    /**
+        Turns the stars opaque.
+    **/
     public void turnOpaque() {
         if (transparency+6 - 255 > 0) {
             transparency = 255;
@@ -52,11 +62,12 @@ public class Stars implements DrawingObject{
         else transparency+=6;
     }
 
+    /**
+        Sets the value of the transparency based on the given value.
+        @param x value for transparency of the square objects.
+    **/
     public void setTransparency(int x) {
         transparency = x;
-    }
-    public int getTransparency() {
-        return transparency;
     }
 
     private void starsPls(){
@@ -74,6 +85,10 @@ public class Stars implements DrawingObject{
         }
     }
 
+    /**
+        The for loop iterates through the ArrayLists and
+        draw the stars using the Graphics2D object.
+	**/
     public void draw(Graphics2D g2d){
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,

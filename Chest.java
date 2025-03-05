@@ -1,23 +1,61 @@
+/** 
+    This is the Chest class, which implements the DrawingObject interface and 
+    uses the java.awt.geom package to draw a the chest. It includes a method to 
+    change its state or appearance to be 'unlocked' after the button is pressed.
+
+    @author Janelle Angela C. Lopez (242682)
+    @author Aldrin Joseph T. Nellas (243215)
+	@version February 15, 2025
+	
+	I have not discussed the Java language code in my program 
+	with anyone other than my instructor or the teaching assistants 
+	assigned to this course.
+
+	I have not used Java language code obtained from another student, 
+	or any other unauthorized source, either modified or unmodified.
+
+	If any Java language code or documentation used in my program 
+	was obtained from another source, such as a textbook or website, 
+	that has been clearly noted with a proper citation in the comments 
+	of my program.
+**/
+
+
 import java.awt.*;
 import java.awt.geom.*;
 import java.util.*;
 
+/**
+    Initializes values for the state and counter, as well as
+    ArrayLists containing Circle objects.
+**/
 public class Chest implements DrawingObject {
     private int state = 0;
     private int counter = 0;
     private ArrayList<Circle> gold1 = new ArrayList<Circle>();
     private ArrayList<Circle> gold2 = new ArrayList<Circle>();
 
-
+    /**
+        Constructor for the Chest class.
+	**/
     public Chest() {
     }
 
+    /**
+        Toggles the state of the chest between state 0 ('locked') 
+        and state 1 ('unlocked'). The state determines the chest's 
+        appearance.
+	**/
     public void changeState() {
         this.counter+=1;
         if (this.counter%2 == 0) this.state = 1;
         else this.state = 0;
     }
 
+    /**
+        Draws the chest based on its current state
+        using the Graphics2D object.
+	**/
     public void draw(Graphics2D g2d) {
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,
@@ -104,7 +142,7 @@ public class Chest implements DrawingObject {
         g2d.fill(chestBottom);
 
         Path2D chestBottomInner = new Path2D.Double();
-        g2d.setColor(new Color(152, 86, 0)); //255, 180, 18
+        g2d.setColor(new Color(152, 86, 0));
         chestBottomInner.moveTo(38.9, 595.5);
         chestBottomInner.lineTo(36, 554.7);
         chestBottomInner.lineTo(117, 554.7);
@@ -126,7 +164,6 @@ public class Chest implements DrawingObject {
         chestLock.moveTo(69.2, 559.1);
         chestLock.curveTo(69.36, 553.7, 67.4, 546.2, 76.5, 546.3);
         chestLock.curveTo(82.8, 546, 84.76, 550.1, 84.4, 559.1);
-        // chestLock.lineTo(69.2, 559.1);
         g2d.fill(chestLock);
 
         Path2D keyHole = new Path2D.Double();

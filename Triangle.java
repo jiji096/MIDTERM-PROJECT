@@ -24,10 +24,23 @@
 import java.awt.*;
 import java.awt.geom.*;
 
+/**
+    Initializes fields for multiple x and y coordinates, and color.
+**/
 public class Triangle implements DrawingObject {
     private double x1, y1, x2, y2, x3, y3;
     private Color color;
 
+    /**
+        Constructs triangle with the given x and y coordinates, and color.
+        @param x1      The x-coordinate of the first point.
+        @param y1      The y-coordinate of the first point.
+        @param x2      The x-coordinate of the second point.
+        @param y2      The y-coordinate of the second point.
+        @param x3      The x-coordinate of the third point.
+        @param y3      The y-coordinate of the third point.
+        @param color   The color of the triangle.
+    **/
     public Triangle(double x1, double y1, double x2, double y2, double x3, double y3, Color color){
         this.x1 = x1;
         this.x2 = x2;
@@ -38,6 +51,9 @@ public class Triangle implements DrawingObject {
         this.color = color;
     }
 
+    /**
+        Draws the Triangle using the Graphics2D object.
+	**/
     public void draw(Graphics2D g2d){
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,
