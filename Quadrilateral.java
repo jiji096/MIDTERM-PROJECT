@@ -25,7 +25,8 @@ import java.awt.*;
 import java.awt.geom.*;
 
 /**
-    Initializes fields for multiple x and y coordinates, and color.
+    Initializes fields for multiple x and y coordinates from
+    top left --> top right --> bottom right --> bottom left, and color.
 **/
 public class Quadrilateral implements DrawingObject {
     private double x1, y1, x2, y2, x3, y3, x4, y4;
@@ -59,7 +60,7 @@ public class Quadrilateral implements DrawingObject {
         Draws the Quadrilateral using the Graphics2D object.
 	**/
     public void draw(Graphics2D g2d){
-        
+
         Path2D.Double quadrilateral = new Path2D.Double();
         quadrilateral.moveTo(x1, y1);
         quadrilateral.lineTo(x2, y2);

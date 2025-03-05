@@ -25,7 +25,8 @@
 import java.awt.*;
 
 /**
-    Initializes values for transparency.
+    Initializes values for transparency. It is at 120 due to the time of the day
+    in which the program starts.
 **/
 public class Rainbow implements DrawingObject {
     private int transparency = 120;
@@ -37,7 +38,8 @@ public class Rainbow implements DrawingObject {
     }
 
     /**
-        Adjusts the transparency of the Rainbow.
+        Turns the rainbow more and more transparent as animation gets further from midday.
+        Sets transparency to 0 at night.
     **/
     public void turnTransparent() {
         if (transparency <= 255 && transparency > 20) {
@@ -47,7 +49,8 @@ public class Rainbow implements DrawingObject {
     }
 
     /**
-        Turns the rainbow opaque.
+        Turns the rainbow opaque as animation gets closer to midday.
+        Sets transparency to 255 at midday
     **/
     public void turnOpaque() {
         if (transparency+6 - 255 > 0) {

@@ -33,7 +33,7 @@ public class Coral implements DrawingObject {
 
     /**
         Constructs the coral with the given x-coordinates and colors.
-        @param x      The x-coordinate of the coral.
+        @param x       The x-coordinate of the coral.
         @param color1  The main color of the coral.
         @param color2  The secondary color of the coral.
     **/

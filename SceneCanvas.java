@@ -27,7 +27,11 @@ import javax.swing.*;
 public class SceneCanvas extends JComponent { 
     private DrawingObject Null = null;
     private ArrayList<DrawingObject> elements = new ArrayList<>();
-    
+
+    /**
+        Constructs SceneCanvas with an arraylist that contains all the elements
+        to be displayed on screen.
+    **/
     public SceneCanvas(){
         
         Color blue = new Color(100,149,237);
@@ -59,11 +63,17 @@ public class SceneCanvas extends JComponent {
         elements.add(new Coral(610, new Color(159, 225, 255), new Color(93, 135, 155)));
     }
 
+    /**
+        Paints all the elements from the arraylist
+    **/
     @Override
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
+        /**
+            Adds anti-aliasing to the drawing.
+        **/
         RenderingHints rh = new RenderingHints(
             RenderingHints.KEY_ANTIALIASING,
             RenderingHints.VALUE_ANTIALIAS_ON);
@@ -74,7 +84,9 @@ public class SceneCanvas extends JComponent {
         }
     }  
 
-    
+    /**
+        This method goes through every element of 
+    **/
     public DrawingObject getObject(String x) {
         for(DrawingObject y : elements) {
             if (y.getClass().toString().replaceAll("class ", "").equals(x)) return y;
