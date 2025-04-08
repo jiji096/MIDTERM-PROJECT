@@ -80,14 +80,6 @@ public class Rainbow implements DrawingObject {
         CircleOutline purple = new CircleOutline(200,220,400,new Color(241, 216, 255, transparency));
         CircleOutline white = new CircleOutline(220,240,360,new Color(255, 255, 255, transparency));
 
-        // Circle red = new Circle(100,120,600,Color.RED);
-        // Circle orange = new Circle(120,140,560,new Color(255, 140, 0));
-        // Circle yellow = new Circle(140,160,520,new Color(255, 210, 18));
-        // Circle green = new Circle(160,180,480,new Color(0, 128, 0));
-        // Circle blue = new Circle(180,200,440,Color.BLUE);
-        // Circle purple = new Circle(200,220,400,new Color(128, 0, 128));
-        // Circle white = new Circle(220,240,360,Color.WHITE);
-
         red.draw(g2d);
         orange.draw(g2d);
         yellow.draw(g2d);

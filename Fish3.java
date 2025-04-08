@@ -30,7 +30,7 @@ public class Fish3 implements DrawingObject {
     private double x = 0;
 
     /**
-        Constructor for the Fish2 class.
+        Constructor for the Fish3 class.
 	**/
     public Fish3() {
     }
@@ -51,7 +51,7 @@ public class Fish3 implements DrawingObject {
         Draws the Fish using the Graphics2D object.
 	**/
     public void draw(Graphics2D g2d) {
-        
+
         Path2D.Double body = new Path2D.Double();
         body.moveTo(x+588.5,561.1);
         body.curveTo(x+588.6,555.7,x+599.86,546.5,x+609.9,558.5);

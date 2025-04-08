@@ -29,7 +29,6 @@ import java.awt.*;
 public class Cloud implements DrawingObject {
     private double x;
     private double y;
-    private double x2 = 0;
     private double size;
     private Color color;
 
